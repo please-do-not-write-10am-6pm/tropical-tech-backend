@@ -1,6 +1,11 @@
 import Stripe from 'stripe'
+import { createHash } from 'crypto'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const stripe = Stripe(process.env.stripeApi_PUBLICKEY)
+const utcDate = Math.floor(new Date().getTime() / 1000)
 const publicKey = process.env.hotelApi_PUBLICKEY
 const privateKey = process.env.hotelApi_PRIVATEKEY
 const assemble = publicKey + privateKey + utcDate

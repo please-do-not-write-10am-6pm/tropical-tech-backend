@@ -12,10 +12,12 @@ import {
 
 const hotelRouter = Router()
 
-hotelRouter.get('/hotels', getAll)
-hotelRouter.get('/hotel/details/:id', getHotelById)
-hotelRouter.get('/hotel/rate/:id', getHotelRateById)
-hotelRouter.get('/hotels/facilities/:id', getHotelFacilitiesById)
-hotelRouter.get('/hotels/test/:id', getHotelTestById)
-hotelRouter.get('/hotels/mostpopular', getMostPopularHotels)
-hotelRouter.get('/hotels/upcoming', getUpcomingHotels)
+hotelRouter.post('/', getAll)
+hotelRouter.get('/:id/details', getHotelById)
+hotelRouter.get('/:id/rate', getHotelRateById)
+hotelRouter.get('/:id/facilities', getHotelFacilitiesById)
+hotelRouter.get('/:id/test', getHotelTestById)
+hotelRouter.get('/mostpopular', getMostPopularHotels)
+hotelRouter.get('/upcoming', getUpcomingHotels)
+
+export default hotelRouter

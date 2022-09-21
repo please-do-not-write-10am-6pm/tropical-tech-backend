@@ -49,3 +49,4 @@ Thumbs.db
 *.mov
 *.wmv
 
+src/controllers/hotel.controller.js

@@ -1,6 +1,6 @@
 import { sign } from 'jsonwebtoken'
 import User from '../schemas/User'
-import Listing from '../schemas/Listing'
+import Hotel from '../schemas/Hotel'
 import Booking from '../schemas/Booking'
 import { compare } from 'bcryptjs'
 

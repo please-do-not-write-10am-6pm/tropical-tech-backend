@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import { urlencoded, json } from 'body-parser'
 import SHA256 from 'crypto-js/sha256'
+import logger from 'morgan'
 import { createHash } from 'crypto'
 import { get } from 'axios'
 import { createTransport, getTestMessageUrl } from 'nodemailer'
@@ -48,6 +49,7 @@ app.use((req, res, next) => {
 app.use(urlencoded({ extended: true }))
 app.use(json())
 app.use(cors())
+app.use(logger('dev'))
 
 app.use((error, req, res, next) => {
   res.status(error.status || 500).send({
@@ -60,7 +62,7 @@ app.use((error, req, res, next) => {
 app.use('/api/auth', authRouter)
 app.use('/api/users', userRouter)
 app.use('/api/session', sessionRouter)
-app.use('/api/hotelthirdparty', hotelRouter)
+app.use('/api/hotels', hotelRouter)
 app.use('/api/pay', payRouter)
 
 const server = async () => {

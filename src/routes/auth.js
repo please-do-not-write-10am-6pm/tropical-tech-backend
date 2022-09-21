@@ -32,3 +32,5 @@ authRouter.post('/signup/step4/upload-id', upload.single('id'), step4UploadId)
 authRouter.post('/signup/generateCode', generateCode)
 authRouter.post('/signup/verifyCode', verifyCode)
 authRouter.post('/forgotpassword', forgotPassword)
+
+export default authRouter
