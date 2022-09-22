@@ -7,7 +7,9 @@ import {
   getHotelFacilitiesById,
   getHotelTestById,
   getMostPopularHotels,
-  getUpcomingHotels
+  getRecentSearchedHotels,
+  getDestinationIdeaHotels,
+  getBestDealHotels
 } from '../controllers/hotel.controller'
 
 const hotelRouter = Router()
@@ -18,6 +20,8 @@ hotelRouter.get('/:id/rate', getHotelRateById)
 hotelRouter.get('/:id/facilities', getHotelFacilitiesById)
 hotelRouter.get('/:id/test', getHotelTestById)
 hotelRouter.get('/mostpopular', getMostPopularHotels)
-hotelRouter.get('/upcoming', getUpcomingHotels)
+hotelRouter.get('/recentsearch', getRecentSearchedHotels)
+hotelRouter.get('/destinationideas', getDestinationIdeaHotels)
+hotelRouter.get('/bestdeal', getBestDealHotels)
 
 export default hotelRouter

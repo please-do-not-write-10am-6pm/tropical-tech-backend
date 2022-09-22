@@ -1181,6 +1181,11 @@
   dependencies:
     "function-bind" "^1.1.1"
 
+"haversine@^1.1.1":
+  "integrity" "sha512-KW4MS8+krLIeiw8bF5z532CptG0ZyGGFj0UbKMxx25lKnnJ1hMUbuzQl+PXQjNiDLnl1bOyz23U6hSK10r4guw=="
+  "resolved" "https://registry.npmjs.org/haversine/-/haversine-1.1.1.tgz"
+  "version" "1.1.1"
+
 "hotelbeds.ts@^1.0.0":
   "integrity" "sha512-UbguyOU7u87Ldmz2OX4o5eoPlaoK9o6Ff6wtORSBAYfWK+vO/U0NPkx8MvNcr/3BSxpKrGHilGr/4Ha/Q976pg=="
   "resolved" "https://registry.npmjs.org/hotelbeds.ts/-/hotelbeds.ts-1.0.0.tgz"
