@@ -10,7 +10,7 @@ import {
   getRecentSearchedHotels,
   getDestinationIdeaHotels,
   getBestDealHotels
-} from '../controllers/hotel.controller'
+} from '../controllers/hotel.controller.mjs'
 
 const hotelRouter = Router()
 

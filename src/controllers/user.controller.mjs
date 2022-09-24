@@ -1,5 +1,6 @@
-import User from '../schemas/User'
-import { hash } from 'bcryptjs'
+import User from '../schemas/User.mjs'
+import bcrypt from 'bcryptjs'
+const { hash } = bcrypt
 
 export const create = async (request, response) => {
   const { username, adress, email, mobilenumber, password } = request.body

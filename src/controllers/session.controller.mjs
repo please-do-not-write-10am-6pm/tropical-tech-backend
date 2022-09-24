@@ -1,8 +1,9 @@
-import { sign } from 'jsonwebtoken'
-import User from '../schemas/User'
-import Hotel from '../schemas/Hotel'
-import Booking from '../schemas/Booking'
-import { compare } from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import User from '../schemas/User.mjs'
+import Hotel from '../schemas/Hotel.mjs'
+import Booking from '../schemas/Booking.mjs'
+import bcrypt from 'bcryptjs'
+const { compare } = bcrypt
 
 export const create = async (request, response) => {
   const { username, password } = request.body
@@ -23,7 +24,7 @@ export const create = async (request, response) => {
     return response.status(404).json({ error: 'Incorrect password or username!' })
   }
 
-  const token = sign({}, '4ccdcbc7ec60819cfb8bca1c20862b69', {
+  const token = jwt.sign({}, '4ccdcbc7ec60819cfb8bca1c20862b69', {
     subject: new String(user._id),
     expiresIn: '1d'
   })

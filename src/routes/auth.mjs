@@ -16,7 +16,7 @@ import {
   generateCode,
   verifyCode,
   forgotPassword
-} from '../controllers/auth.controller'
+} from '../controllers/auth.controller.mjs'
 
 const authRouter = Router()
 

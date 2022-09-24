@@ -1,27 +1,20 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import { urlencoded, json } from 'body-parser'
-import SHA256 from 'crypto-js/sha256'
+import parser from 'body-parser'
+const { urlencoded, json } = parser
 import logger from 'morgan'
 import { createHash } from 'crypto'
-import { get } from 'axios'
-import { createTransport, getTestMessageUrl } from 'nodemailer'
-import querystring from 'querystring'
-import { compareSync, hashSync } from 'bcryptjs'
-import Stripe from 'stripe'
 import { config as _config } from 'dotenv'
 
-import auth from './middlewares/auth'
-import authRouter from './routes/auth'
-import userRouter from './routes/user'
-import sessionRouter from './routes/session'
-import hotelRouter from './routes/hotel'
-import payRouter from './routes/pay'
+import authRouter from './routes/auth.mjs'
+import userRouter from './routes/user.mjs'
+import sessionRouter from './routes/session.mjs'
+import hotelRouter from './routes/hotel.mjs'
+import payRouter from './routes/pay.mjs'
 
-import { smtp } from './config/config.json'
-
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 _config()
 
 const app = express()
