@@ -18,7 +18,6 @@ dotenv.config()
 _config()
 
 const app = express()
-const saltRounds = 10
 let utcDate = Math.floor(new Date().getTime() / 1000)
 const publicKey = process.env.hotelApi_PUBLICKEY
 let privateKey = process.env.hotelApi_PRIVATEKEY
