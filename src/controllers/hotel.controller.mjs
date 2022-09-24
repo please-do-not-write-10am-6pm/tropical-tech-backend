@@ -80,6 +80,8 @@ export const getAll = async (req, res) => {
   query.filter = filter
 
   const start = req.body.currentLocation
+    ? req.body.currentLocation
+    : { latitude: 38.722252, longitude: -9.139337 }
 
   const reviews = [
     {
