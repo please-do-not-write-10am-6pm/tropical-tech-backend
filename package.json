@@ -5,7 +5,9 @@
   "author": "Gabriel de Carvalho Dias",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "start": "node ./src/app.js",
+    "dev": "nodemon src/app.js",
+    "format": "prettier"
   },
   "dependencies": {
     "axios": "^0.27.2",
