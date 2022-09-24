@@ -27,13 +27,7 @@ axios.interceptors.request.use(
 )
 
 export const getAll = async (req, res) => {
-  const ipInfo = await axios.get('http://ipinfo.io/json')
-  const ipInfoData = ipInfo.data
-  const start = {
-    latitude: Number(ipInfoData.loc.split(',')[0]),
-    longitude: Number(ipInfoData.loc.split(',')[1])
-  }
-  console.log('start', start)
+  console.log('req.body', req.body)
 
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
@@ -66,8 +60,9 @@ export const getAll = async (req, res) => {
   try {
     const params = {
       access_key: process.env.geoApiKey,
-      query: req.body.destination ? req.body.destination : ''
+      query: req.body.destination.destination ? req.body.destination.destination : ''
     }
+    console.log('params', params)
 
     const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
     geolocation.longitude = data.data[0].longitude
@@ -79,54 +74,25 @@ export const getAll = async (req, res) => {
   }
   geolocation.longitude && (query.geolocation = geolocation)
   const end = { latitude: Number(geolocation.latitude), longitude: Number(geolocation.longitude) }
-  console.log('end', end)
 
   const filter = {
     maxHotels: 12
   }
   query.filter = filter
 
+  const start = req.body.start
+
   const reviews = [
     {
-      type:
-        req.data && req.data.reviews && req.data.reviews[0].type
-          ? req.data.reviews[0].type
-          : 'HOTELBEDS',
-      maxRate:
-        req.data && req.data.reviews && req.data.reviews[0].maxRate
-          ? req.data.reviews[0].maxRate
-          : 5,
-      minRate:
-        req.data && req.data.reviews && req.data.reviews[0].minRate
-          ? req.data.reviews[0].minRate
-          : 1,
-      minReviewCount:
-        req.data && req.data.reviews && req.data.reviews[0].minReviewCount
-          ? req.data.reviews[0].minReviewCount
-          : 3
-    },
-    {
-      type:
-        req.data && req.data.reviews && req.data.reviews[0].type
-          ? req.data.reviews[0].type
-          : 'TRIPADVISOR',
-      maxRate:
-        req.data && req.data.reviews && req.data.reviews[0].maxRate
-          ? req.data.reviews[0].maxRate
-          : 5,
-      minRate:
-        req.data && req.data.reviews && req.data.reviews[0].minRate
-          ? req.data.reviews[0].minRate
-          : 1,
-      minReviewCount:
-        req.data && req.data.reviews && req.data.reviews[0].minReviewCount
-          ? req.data.reviews[0].minReviewCount
-          : 3
+      type: 'HOTELBEDS',
+      maxRate: 5,
+      minRate: 1,
+      minReviewCount: 3
     }
   ]
   query.reviews = reviews
-
   try {
+    console.log('searchquery', query)
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
     const response = []
@@ -144,6 +110,9 @@ export const getAll = async (req, res) => {
       item.city = data.hotel.state.name
       item.address = data.hotel.address.content
       item.coordinates = data.hotel.coordinates
+      item.cancellationPolicies =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.code = searchedHotelData.hotels.hotels[i].code
       item.roomType = searchedHotelData.hotels.hotels[i].rooms[0].name
       item.freeCancellation =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0].amount ===
@@ -172,15 +141,28 @@ export const getHotelById = async (req, res) => {
   const url = `${process.env.hotelContentApi_ENDPOINT}hotels/${id}/details`
   try {
     const { data } = await axios.get(url)
-    return res.json(data)
+    const response = {}
+    response.hotelName = data.hotel.name.content
+    response.hotelImg = data.hotel.images[0].path
+    response.city = data.hotel.state.name
+    response.country = data.hotel.country.description.content
+    response.description = data.hotel.description.content
+    response.lastUpdate = data.hotel.lastUpdate
+    const gallery = []
+    for (let i = 0; i < data.hotel.images.length; i++) {
+      gallery.push(data.hotel.images[i].path)
+    }
+    response.gallery = gallery
+    return res.json(response)
   } catch (error) {
     res.json({ error: error.message })
   }
 }
 
 export const getHotelRateById = async (req, res) => {
+  console.log('rate params', req.params)
   const { id } = req.params
-  const url = `${process.env.hotelContentApi_ENDPOINT}types/ratecommentdetails?date=2022-09-20&code=${id}`
+  const url = `${process.env.hotelContentApi_ENDPOINT}types/ratecommentdetails?date=2022-09-24&code=${id}`
   try {
     const { data } = await axios.get(url)
     return res.json(data)
@@ -226,14 +208,14 @@ export const getMostPopularHotels = async (req, res) => {
   const occupancies = [
     {
       rooms: 1,
-      adults: 1,
+      adults: 2,
       children: 0
     }
   ]
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 10
+    maxHotels: 4
   }
   query.filter = filter
 
@@ -248,8 +230,8 @@ export const getMostPopularHotels = async (req, res) => {
   query.reviews = reviews
 
   let numArr = []
-  for (let i = 0; i < 50; i++) {
-    let num = Math.floor(Math.random() * 50) + 1
+  for (let i = 0; i < 20; i++) {
+    let num = Math.floor(Math.random() * 12000) + 1
     if (numArr.indexOf(num) === -1) numArr.push(num)
   }
 
@@ -269,9 +251,17 @@ export const getMostPopularHotels = async (req, res) => {
       const item = {}
 
       item.name = searchedHotelData.hotels.hotels[i].name
+      item.code = searchedHotelData.hotels.hotels[i].code
+      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
+      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
+      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.image = data.hotel.images[1].path
       item.country = data.hotel.country.description.content
+      item.cancellationPolicies =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
       item.city = data.hotel.state.name
+      item.from = searchedHotelData.hotels.checkIn
+      item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
     return res.json(response)
@@ -303,7 +293,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 18
+    maxHotels: 54
   }
   query.filter = filter
 
@@ -311,15 +301,15 @@ export const getRecentSearchedHotels = async (req, res) => {
     {
       type: 'HOTELBEDS',
       maxRate: 5,
-      minRate: 4,
+      minRate: 1,
       minReviewCount: 3
     }
   ]
   query.reviews = reviews
 
   let numArr = []
-  for (let i = 1; i < 50; i++) {
-    let num = Math.floor(Math.random() * 70) + 1
+  for (let i = 1; i < 10; i++) {
+    let num = Math.floor(Math.random() * 10000) + 1
     if (numArr.indexOf(num) === -1) numArr.push(num)
   }
 
@@ -342,8 +332,14 @@ export const getRecentSearchedHotels = async (req, res) => {
       item.image = data.hotel.images[2].path
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
-      item.from = currentDate.toISOString().split('T')[0]
-      item.to = nextDate.toISOString().split('T')[0]
+      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
+      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
+      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
+      item.code = searchedHotelData.hotels.hotels[i].code
+      item.from = searchedHotelData.hotels.checkIn
+      item.cancellationPolicies =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
     console.log('recent hotel response', response)
@@ -359,7 +355,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
   let query = {}
 
   let currentDate = new Date()
-  let nextDate = new Date(new Date().getTime() + 24 * 3600 * 1000)
+  let nextDate = new Date(new Date().getTime() + 48 * 3600 * 1000)
   const stay = {
     checkIn: currentDate.toISOString().split('T')[0],
     checkOut: nextDate.toISOString().split('T')[0]
@@ -376,7 +372,9 @@ export const getDestinationIdeaHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4
+    maxHotels: 4,
+    minRate: 700,
+    maxRate: 5000
   }
   query.filter = filter
 
@@ -391,8 +389,8 @@ export const getDestinationIdeaHotels = async (req, res) => {
   query.reviews = reviews
 
   let numArr = []
-  for (let i = 951; i < 1000; i++) {
-    let num = Math.floor(Math.random() * 50) + 1
+  for (let i = 0; i < 50; i++) {
+    let num = Math.floor(Math.random() * 13000) + 1
     if (numArr.indexOf(num) === -1) numArr.push(num)
   }
 
@@ -412,9 +410,17 @@ export const getDestinationIdeaHotels = async (req, res) => {
       const item = {}
 
       item.name = searchedHotelData.hotels.hotels[i].name
+      item.code = searchedHotelData.hotels.hotels[i].code
       item.image = data.hotel.images[1].path
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
+      item.cancellationPolicies =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
+      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
+      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
+      item.from = searchedHotelData.hotels.checkIn
+      item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
     return res.json(response)
@@ -429,7 +435,7 @@ export const getBestDealHotels = async (req, res) => {
   let query = {}
 
   let currentDate = new Date()
-  let nextDate = new Date(new Date().getTime() + 24 * 3600 * 1000)
+  let nextDate = new Date(new Date().getTime() + 48 * 3600 * 1000)
   const stay = {
     checkIn: currentDate.toISOString().split('T')[0],
     checkOut: nextDate.toISOString().split('T')[0]
@@ -446,7 +452,8 @@ export const getBestDealHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4
+    maxHotels: 4,
+    maxRate: 300
   }
   query.filter = filter
 
@@ -454,15 +461,15 @@ export const getBestDealHotels = async (req, res) => {
     {
       type: 'HOTELBEDS',
       maxRate: 5,
-      minRate: 4,
+      minRate: 1,
       minReviewCount: 5
     }
   ]
   query.reviews = reviews
 
   let numArr = []
-  for (let i = 2501; i < 2550; i++) {
-    let num = Math.floor(Math.random() * 50) + 1
+  for (let i = 0; i < 20; i++) {
+    let num = Math.floor(Math.random() * 10000) + 1
     if (numArr.indexOf(num) === -1) numArr.push(num)
   }
 
@@ -482,9 +489,17 @@ export const getBestDealHotels = async (req, res) => {
       const item = {}
 
       item.name = searchedHotelData.hotels.hotels[i].name
+      item.code = searchedHotelData.hotels.hotels[i].code
       item.image = data.hotel.images[1].path
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
+      item.cancellationPolicies =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
+      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
+      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
+      item.from = searchedHotelData.hotels.checkIn
+      item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
     return res.json(response)
