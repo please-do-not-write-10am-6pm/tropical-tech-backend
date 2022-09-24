@@ -5,7 +5,7 @@
   "author": "Gabriel de Carvalho Dias",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/app.mjs",
+    "start": "nodemon src/app.mjs",
     "dev": "nodemon src/app.mjs",
     "format": "prettier"
   },
