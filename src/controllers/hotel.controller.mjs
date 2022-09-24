@@ -62,7 +62,6 @@ export const getAll = async (req, res) => {
       access_key: process.env.geoApiKey,
       query: req.body.destination.destination ? req.body.destination.destination : ''
     }
-    console.log('params', params)
 
     const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
     geolocation.longitude = data.data[0].longitude
@@ -80,7 +79,7 @@ export const getAll = async (req, res) => {
   }
   query.filter = filter
 
-  const start = req.body.start
+  const start = req.body.currentLocation
 
   const reviews = [
     {
