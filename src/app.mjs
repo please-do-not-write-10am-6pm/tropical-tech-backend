@@ -63,7 +63,7 @@ const server = async () => {
     //   useNewUrlParser: true,
     //   useUnifiedTopology: true
     // })
-    app.listen(7676, () => console.log('Server started on port 7676'))
+    app.listen(process.env.PORT, () => console.log('Server started on port 7676'))
   } catch (error) {
     console.error(error)
     process.exit(1)
