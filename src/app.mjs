@@ -59,10 +59,10 @@ app.use('/api/pay', payRouter)
 
 const server = async () => {
   try {
-    await mongoose.connect('mongodb://root:root@localhost:27017/tropical_db', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
+    // await mongoose.connect('mongodb://root:root@localhost:27017/tropical_db', {
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true
+    // })
     app.listen(7676, () => console.log('Server started on port 7676'))
   } catch (error) {
     console.error(error)
