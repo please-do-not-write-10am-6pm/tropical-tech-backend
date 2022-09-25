@@ -96,9 +96,11 @@ export const getAll = async (req, res) => {
     console.log('searchquery', query)
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
+    console.log('searchedHotelData', searchedHotelData)
     const response = []
 
     for (let i = 0; i < searchedHotelData.hotels.hotels.length; i++) {
+      console.log('i', i)
       const contentUrl = `${process.env.hotelContentApi_ENDPOINT}hotels/${searchedHotelData.hotels.hotels[i].code}/details`
       const { data } = await axios.get(contentUrl)
       const item = {}
@@ -123,8 +125,7 @@ export const getAll = async (req, res) => {
       item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
       item.noprepaymentneeded =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].paymentType === 'AT_WEB' ? false : true
-      // item.cashback
-      item.bedType = data.hotel.rooms[0].roomStays[0].roomStayFacilities[0].description.content
+      item.bedType = searchedHotelData.hotels.hotels[i].rooms[0].name
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       item.distance = haversine(start, end, { unit: 'mile' })
