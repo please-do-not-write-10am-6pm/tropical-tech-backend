@@ -75,7 +75,7 @@ export const getAll = async (req, res) => {
   const end = { latitude: Number(geolocation.latitude), longitude: Number(geolocation.longitude) }
 
   const filter = {
-    maxHotels: 4
+    maxHotels: 6
   }
   query.filter = filter
 
