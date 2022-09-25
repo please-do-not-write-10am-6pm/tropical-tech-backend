@@ -217,7 +217,7 @@ export const getMostPopularHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4
+    maxHotels: 3
   }
   query.filter = filter
 
@@ -232,7 +232,7 @@ export const getMostPopularHotels = async (req, res) => {
   query.reviews = reviews
 
   let numArr = []
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 50; i++) {
     let num = Math.floor(Math.random() * 12000) + 1
     if (numArr.indexOf(num) === -1) numArr.push(num)
   }
@@ -295,7 +295,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 54
+    maxHotels: 3
   }
   query.filter = filter
 
@@ -310,7 +310,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   query.reviews = reviews
 
   let numArr = []
-  for (let i = 1; i < 10; i++) {
+  for (let i = 1; i < 50; i++) {
     let num = Math.floor(Math.random() * 10000) + 1
     if (numArr.indexOf(num) === -1) numArr.push(num)
   }
@@ -374,7 +374,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4,
+    maxHotels: 3,
     minRate: 700,
     maxRate: 5000
   }
@@ -454,7 +454,7 @@ export const getBestDealHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4,
+    maxHotels: 3,
     maxRate: 300
   }
   query.filter = filter
@@ -470,7 +470,7 @@ export const getBestDealHotels = async (req, res) => {
   query.reviews = reviews
 
   let numArr = []
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 50; i++) {
     let num = Math.floor(Math.random() * 10000) + 1
     if (numArr.indexOf(num) === -1) numArr.push(num)
   }
