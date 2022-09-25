@@ -1,6 +1,6 @@
 import express from 'express'
-// import mongoose from 'mongoose'
-// import cors from 'cors'
+import mongoose from 'mongoose'
+import cors from 'cors'
 import parser from 'body-parser'
 const { urlencoded, json } = parser
 import logger from 'morgan'
@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 
 app.use(urlencoded({ extended: true }))
 app.use(json())
-// app.use(cors())
+app.use(cors())
 app.use(logger('dev'))
 
 app.use((error, req, res, next) => {
