@@ -1,0 +1,2655 @@
+{
+  "auditData": {
+    "processTime": "94",
+    "timestamp": "2022-09-25 04:52:47.928",
+    "requestHost": "45.126.3.252, 35.227.250.134, 130.211.0.240,10.197.232.34,10.197.40.99",
+    "serverId": "hotel-booking-api-5556",
+    "environment": "[gcpeuropewest1, gcpeuropewest1b, ip_10_197_40_95]",
+    "release": "",
+    "token": "3E5EA05A75D24F3DB7B6FB9ED2647ABA",
+    "internal": "0|726CEB918526427166407436783500|UK|08|6|96||||||||||||84||1~1~1~0|0|0||0|c93b7e06923828f86a14b3a8cf7ab99d||||"
+  },
+  "hotels": {
+    "hotels": [
+      {
+        "code": 7,
+        "name": "Servatur Don Miguel Adults Only",
+        "categoryCode": "3EST",
+        "categoryName": "3 STARS",
+        "destinationCode": "LPA",
+        "destinationName": "Gran Canaria",
+        "zoneCode": 20,
+        "zoneName": "Playa del Inglés",
+        "latitude": "27.76033734644050454676",
+        "longitude": "-15.57877009031105508541",
+        "reviews": [
+          {
+            "rate": 4.52,
+            "reviewCount": 67,
+            "type": "HOTELBEDS"
+          }
+        ],
+        "rooms": [
+          {
+            "code": "SUI.C1",
+            "name": "SUITE 1 ADULTO",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|56|7|SUI.C1|NRFBB 7|BB||1~1~0||N@06~~263363~-1676795563~N~~~NRF~726CEB918526427166407436783500AAUK00000060000000008263363",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "867.99",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "867.99",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|SUI.C1|OPACOBB 7|BB||1~1~0||P@06~~263363~-1269009124~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008263363",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "867.99",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "867.99",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|SUI.C1|CG-FITBB 7|BB||1~1~0||N@06~~2263c4~12770922~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082263c4",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "964.38",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "964.38",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|SUI.C1|NRFHB 7|HB||1~1~0||N@06~~2223d8~1536633109~N~~~NRF~726CEB918526427166407436783500AAUK000000600000000082223d8",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "984.34",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "984.34",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|SUI.C1|OPACOHB 7|HB||1~1~0||P@06~~2223d8~1944419548~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082223d8",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "984.34",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "984.34",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|SUI.C1|CG-FITHB 7|HB||1~1~0||N@06~~238445~303276202~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008238445",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1093.56",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1093.56",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "DUS.ST-1",
+            "name": "DOUBLE SINGLE USE STANDARD",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST-1|NRFBB 7|BB||1~1~0||N@06~~20c43d~-43741223~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000820c43d",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1085.12",
+                "allotment": 18,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1085.12",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST-1|OPACOBB 7|BB||1~1~0||P@06~~20c43d~1981594272~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000820c43d",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1085.12",
+                "allotment": 18,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1085.12",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST-1|NRFHB 7|HB||1~1~0||N@06~~22e4b1~768160601~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000822e4b1",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1201.46",
+                "allotment": 18,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1201.46",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST-1|OPACOHB 7|HB||1~1~0||P@06~~22e4b1~-1501471200~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000822e4b1",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1201.46",
+                "allotment": 18,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1201.46",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST-1|CG-FITBB 7|BB||1~1~0||N@06~~23d4b5~-1979270842~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000823d4b5",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1205.61",
+                "allotment": 18,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1205.61",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST-1|CG-FITHB 7|HB||1~1~0||N@06~~24d536~-721474490~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824d536",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1334.77",
+                "allotment": 18,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1334.77",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "DUS.ST",
+            "name": "DOUBLE SINGLE USE STANDARD",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST|NRFBB 7|BB||1~1~0||N@06~~23d45d~34882941~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000823d45d",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1117.61",
+                "allotment": 84,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1117.61",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST|OPACOBB 7|BB||1~1~0||P@06~~23d45d~-579823804~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000823d45d",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1117.61",
+                "allotment": 84,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1117.61",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST|NRFHB 7|HB||1~1~0||N@06~~25e4d1~1330430301~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000825e4d1",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1233.94",
+                "allotment": 84,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1233.94",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST|OPACOHB 7|HB||1~1~0||P@06~~25e4d1~715723556~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000825e4d1",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1233.94",
+                "allotment": 84,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1233.94",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST|CG-FITBB 7|BB||1~1~0||N@06~~23c4d9~805406274~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000823c4d9",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1241.60",
+                "allotment": 84,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1241.60",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.ST|CG-FITHB 7|HB||1~1~0||N@06~~25255a~1453367970~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000825255a",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1370.82",
+                "allotment": 84,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1370.82",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "DUS.VP",
+            "name": "DOUBLE SINGLE USE POOL VIEW",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.VP|NRFBB 7|BB||1~1~0||N@06~~22a4a9~850472612~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000822a4a9",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1193.42",
+                "allotment": 6,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1193.42",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.VP|OPACOBB 7|BB||1~1~0||P@06~~22a4a9~-1915135317~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000822a4a9",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1193.42",
+                "allotment": 6,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1193.42",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.VP|NRFHB 7|HB||1~1~0||N@06~~25451d~1280449380~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000825451d",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1309.84",
+                "allotment": 6,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1309.84",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.VP|OPACOHB 7|HB||1~1~0||P@06~~25451d~-1485158549~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000825451d",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1309.84",
+                "allotment": 6,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1309.84",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.VP|CG-FITBB 7|BB||1~1~0||N@06~~21652e~-1526506597~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821652e",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1326.22",
+                "allotment": 6,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1326.22",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|DUS.VP|CG-FITHB 7|HB||1~1~0||N@06~~2295af~-57500197~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082295af",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1455.41",
+                "allotment": 6,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1455.41",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "TPL.ST",
+            "name": "TRIPLE STANDARD",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|56|7|TPL.ST|NRFBB 7|BB||1~1~0||N@06~~25c515~1890209739~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000825c515",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1301.92",
+                "allotment": 8,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1301.92",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|TPL.ST|OPACOBB 7|BB||1~1~0||P@06~~25c515~-2127028718~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000825c515",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1301.92",
+                "allotment": 8,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1301.92",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|TPL.ST|NRFHB 7|HB||1~1~0||N@06~~21d58a~132134923~N~~~NRF~726CEB918526427166407436783500AAUK0000006000000000821d58a",
+                "rateClass": "NRF",
+                "rateType": "BOOKABLE",
+                "net": "1418.29",
+                "allotment": 8,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1418.29",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|TPL.ST|OPACOHB 7|HB||1~1~0||P@06~~21d58a~409863762~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821d58a",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1418.29",
+                "allotment": 8,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1418.29",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|TPL.ST|CG-FITBB 7|BB||1~1~0||N@06~~2355a6~33787956~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082355a6",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1446.53",
+                "allotment": 8,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1446.53",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|56|7|TPL.ST|CG-FITHB 7|HB||1~1~0||N@06~~245627~1291584308~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008245627",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1575.69",
+                "allotment": 8,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1575.69",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          }
+        ],
+        "minRate": "867.99",
+        "maxRate": "1575.69",
+        "currency": "EUR"
+      },
+      {
+        "code": 46,
+        "name": "Guitart Rosa",
+        "categoryCode": "3EST",
+        "categoryName": "3 STARS",
+        "destinationCode": "LLM",
+        "destinationName": "Costa Brava & Costa Barcelona-Maresme",
+        "zoneCode": 99,
+        "zoneName": "Lloret de Mar",
+        "latitude": "41.70180407202421",
+        "longitude": "2.8455112874507904",
+        "reviews": [
+          {
+            "rate": 3.5,
+            "reviewCount": 10,
+            "type": "HOTELBEDS"
+          }
+        ],
+        "rooms": [
+          {
+            "code": "DUS.VP-1",
+            "name": "DOUBLE SINGLE USE POOL VIEW",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|42|46|DUS.VP-1|CG-BARNETBB|BB||1~1~0||N@06~~23f266~-1371519250~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008211219",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "537.17",
+                "allotment": 42,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "537.17",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "4.62",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|46|DUS.VP-1|CG-BARNETHB|HB||1~1~0||N@06~~23f30b~-739425063~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000822d2a9",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "681.45",
+                "allotment": 42,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "681.45",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "4.62",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          }
+        ],
+        "minRate": "537.17",
+        "maxRate": "681.45",
+        "currency": "EUR"
+      },
+      {
+        "code": 48,
+        "name": "H·TOP Royal Sun",
+        "categoryCode": "4EST",
+        "categoryName": "4 STARS",
+        "destinationCode": "LLM",
+        "destinationName": "Costa Brava & Costa Barcelona-Maresme",
+        "zoneCode": 15,
+        "zoneName": "Santa Susana",
+        "latitude": "41.634145",
+        "longitude": "2.724242",
+        "reviews": [
+          {
+            "rate": 3.79,
+            "reviewCount": 20,
+            "type": "HOTELBEDS"
+          }
+        ],
+        "rooms": [
+          {
+            "code": "SGL.ST",
+            "name": "SINGLE STANDARD",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESRO|RO||1~1~0||N@06~~2342ac~-1121668160~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082342ac",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "684.52",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "684.52",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITRO|RO||1~1~0||N@06~~2342ac~570768931~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082342ac",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "684.52",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "684.52",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINERO|RO||1~1~0||N@06~~2342ac~1786158719~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082342ac",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "684.52",
+                "allotment": 98,
+                "rateCommentsId": "42|57458|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "684.52",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESRO|RO||1~1~0||N@06~~2342ac~-380202141~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082342ac",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "684.52",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "684.52",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITBB|BB||1~1~0||N@06~~2272fc~1537930211~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082272fc",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "764.39",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "764.39",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINEBB|BB||1~1~0||N@06~~2272fc~-1541647297~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082272fc",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "764.39",
+                "allotment": 98,
+                "rateCommentsId": "42|58475|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "764.39",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESBB|BB||1~1~0||N@06~~2272fc~586959139~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082272fc",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "764.39",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "764.39",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESBB|BB||1~1~0||N@06~~2272fc~-154506880~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082272fc",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "764.39",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "764.39",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITHB|HB||1~1~0||N@06~~21d324~-170111325~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821d324",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "804.29",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "804.29",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINEHB|HB||1~1~0||N@06~~21d324~1045278463~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821d324",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "804.29",
+                "allotment": 98,
+                "rateCommentsId": "42|58477|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "804.29",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESHB|HB||1~1~0||N@06~~21d324~-1121082397~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821d324",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "804.29",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "804.29",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESHB|HB||1~1~0||N@06~~21d324~-1862548416~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821d324",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "804.29",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "804.29",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITMB|MB||1~1~0||N@06~~21334c~-1454750717~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821334c",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "844.19",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "MB",
+                "boardName": "HALF BOARD WITH BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "844.19",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINEMB|MB||1~1~0||N@06~~21334c~-239360929~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821334c",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "844.19",
+                "allotment": 98,
+                "rateCommentsId": "42|58478|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "MB",
+                "boardName": "HALF BOARD WITH BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "844.19",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESMB|MB||1~1~0||N@06~~21334c~1889245507~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821334c",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "844.19",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "MB",
+                "boardName": "HALF BOARD WITH BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "844.19",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESMB|MB||1~1~0||N@06~~21334c~1147779488~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821334c",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "844.19",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "MB",
+                "boardName": "HALF BOARD WITH BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "844.19",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITFB|FB||1~1~0||N@06~~209374~-965199549~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008209374",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "884.09",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "FB",
+                "boardName": "FULL BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "884.09",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINEFB|FB||1~1~0||N@06~~209374~250190239~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008209374",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "884.09",
+                "allotment": 98,
+                "rateCommentsId": "42|58476|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "FB",
+                "boardName": "FULL BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "884.09",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESFB|FB||1~1~0||N@06~~209374~-1916170621~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008209374",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "884.09",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "FB",
+                "boardName": "FULL BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "884.09",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESFB|FB||1~1~0||N@06~~209374~1637330656~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008209374",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "884.09",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "FB",
+                "boardName": "FULL BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "884.09",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITPB|PB||1~1~0||N@06~~26339b~-1476085117~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000826339b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "923.99",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "PB",
+                "boardName": "FULL BOARD BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "923.99",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINEPB|PB||1~1~0||N@06~~26339b~-260695329~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000826339b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "923.99",
+                "allotment": 98,
+                "rateCommentsId": "42|58479|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "PB",
+                "boardName": "FULL BOARD BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "923.99",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESPB|PB||1~1~0||N@06~~26339b~1867911107~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000826339b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "923.99",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "PB",
+                "boardName": "FULL BOARD BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "923.99",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESPB|PB||1~1~0||N@06~~26339b~1126445088~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000826339b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "923.99",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "PB",
+                "boardName": "FULL BOARD BEVERAGES INCLUDED",
+                "cancellationPolicies": [
+                  {
+                    "amount": "923.99",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITAI|AI||1~1~0||N@06~~24343b~-781765469~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824343b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1083.67",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AI",
+                "boardName": "ALL INCLUSIVE",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1083.67",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINEAI|AI||1~1~0||N@06~~24343b~433624319~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824343b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1083.67",
+                "allotment": 98,
+                "rateCommentsId": "42|58473|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AI",
+                "boardName": "ALL INCLUSIVE",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1083.67",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESAI|AI||1~1~0||N@06~~24343b~-1732736541~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824343b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1083.67",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AI",
+                "boardName": "ALL INCLUSIVE",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1083.67",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESAI|AI||1~1~0||N@06~~24343b~1820764736~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824343b",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1083.67",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AI",
+                "boardName": "ALL INCLUSIVE",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1083.67",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-FITAS|AS||1~1~0||N@06~~2224db~737492387~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082224db",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1243.34",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AS",
+                "boardName": "All Inclusive Premium",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1243.34",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|CG-ONLINEAS|AS||1~1~0||N@06~~2224db~1952882175~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082224db",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1243.34",
+                "allotment": 98,
+                "rateCommentsId": "42|58474|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AS",
+                "boardName": "All Inclusive Premium",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1243.34",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-FITLESAS|AS||1~1~0||N@06~~2224db~-213478685~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082224db",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1243.34",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AS",
+                "boardName": "All Inclusive Premium",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1243.34",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|42|48|SGL.ST|OFE-LESAS|AS||1~1~0||N@06~~2224db~-954944704~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082224db",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1243.34",
+                "allotment": 98,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AS",
+                "boardName": "All Inclusive Premium",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1243.34",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "9.24",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          }
+        ],
+        "minRate": "684.52",
+        "maxRate": "1243.34",
+        "currency": "EUR"
+      },
+      {
+        "code": 21,
+        "name": "Viladomat Barcelona",
+        "categoryCode": "3EST",
+        "categoryName": "3 STARS",
+        "destinationCode": "BCN",
+        "destinationName": "Barcelona",
+        "zoneCode": 43,
+        "zoneName": "Eixample",
+        "latitude": "41.382474",
+        "longitude": "2.153346",
+        "reviews": [
+          {
+            "rate": 4.13,
+            "reviewCount": 123,
+            "type": "HOTELBEDS"
+          }
+        ],
+        "rooms": [
+          {
+            "code": "DBL.Z1",
+            "name": "DOUBLE BASIC",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.Z1|CG-BAR1|RO||1~1~0||P@06~~200735~1126156336~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824065e",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1630.64",
+                "allotment": 3,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "96.61",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0,
+                "offers": [
+                  {
+                    "code": "9005",
+                    "name": "Exclusive discount",
+                    "amount": "-181.21"
+                  }
+                ]
+              },
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.Z1|CG-BAR1|BB||1~1~0||P@06~~24b7dd~1061160026~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082576f3",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1779.87",
+                "allotment": 3,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "106.68",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0,
+                "offers": [
+                  {
+                    "code": "9005",
+                    "name": "Exclusive discount",
+                    "amount": "-197.75"
+                  }
+                ]
+              },
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.Z1|CG-BAR1|RO||1~1~0||N@06~~200802~-998235876~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008255713",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1811.85",
+                "allotment": 3,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "107.34",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.Z1|CG-BAR1|BB||1~1~0||N@06~~2328bd~1822944705~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000823e7b9",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1977.62",
+                "allotment": 3,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "118.53",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "DBL.ST",
+            "name": "DOUBLE STANDARD",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.ST|CG-BAR1|RO||1~1~0||P@06~~232778~-155009782~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821a69a",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1690.26",
+                "allotment": 5,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "100.62",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0,
+                "offers": [
+                  {
+                    "code": "9005",
+                    "name": "Exclusive discount",
+                    "amount": "-187.86"
+                  }
+                ]
+              },
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.ST|CG-BAR1|BB||1~1~0||P@06~~219821~255431606~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000823172f",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1839.49",
+                "allotment": 5,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "110.69",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0,
+                "offers": [
+                  {
+                    "code": "9005",
+                    "name": "Exclusive discount",
+                    "amount": "-204.40"
+                  }
+                ]
+              },
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.ST|CG-BAR1|RO||1~1~0||N@06~~20084d~-486581712~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000820c756",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1878.12",
+                "allotment": 5,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "RO",
+                "boardName": "ROOM ONLY",
+                "cancellationPolicies": [
+                  {
+                    "amount": "111.81",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|102|21|DBL.ST|CG-BAR1|BB||1~1~0||N@06~~232908~1823101603~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082597fb",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2043.89",
+                "allotment": 5,
+                "rateCommentsId": "102|183308|0",
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "123.00",
+                    "from": "2022-09-24T23:59:00+02:00"
+                  }
+                ],
+                "taxes": {
+                  "taxes": [
+                    {
+                      "included": false,
+                      "amount": "45.30",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "allIncluded": false
+                },
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          }
+        ],
+        "minRate": "1630.64",
+        "maxRate": "2043.89",
+        "currency": "EUR"
+      },
+      {
+        "code": 26,
+        "name": "Vila Gale Atlantico",
+        "categoryCode": "4EST",
+        "categoryName": "4 STARS",
+        "destinationCode": "FAO",
+        "destinationName": "Algarve",
+        "zoneCode": 80,
+        "zoneName": "Albufeira",
+        "latitude": "37.084364",
+        "longitude": "-8.314086",
+        "reviews": [
+          {
+            "rate": 3.72,
+            "reviewCount": 14,
+            "type": "HOTELBEDS"
+          }
+        ],
+        "rooms": [
+          {
+            "code": "SGL.VM",
+            "name": "SINGLE SEA VIEW",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|58|26|SGL.VM|CGW-BAR-BB|BB||1~1~0||N@06~~200835~-1484616258~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000822472c",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1836.36",
+                "allotment": 3,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1836.36",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|58|26|SGL.VM|CGW-BAR-HB|HB||1~1~0||N@06~~200880~31225563~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000825a76d",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1901.90",
+                "allotment": 15,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1901.90",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "TWN.VM-1",
+            "name": "TWIN SEA VIEW",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|58|26|TWN.VM-1|CGW-BAR-BB|BB||1~1~0||N@06~~20091e~692330205~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082027f8",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2040.02",
+                "allotment": 3,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2040.02",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "TWN.VM",
+            "name": "TWIN SEA VIEW",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|58|26|TWN.VM|CGW-BAR-BB|BB||1~1~0||N@06~~20091e~-184817863~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082027f8",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2040.02",
+                "allotment": 2,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2040.02",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|58|26|TWN.VM|CGW-BAR-HB|HB||1~1~0||N@06~~200aa0~1716922061~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008222949",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2377.34",
+                "allotment": 16,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2377.34",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "JSU.AS",
+            "name": "JUNIOR SUITE CLASSIC",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|58|26|JSU.AS|CGW-BAR-BB|BB||1~1~0||N@06~~200bde~-1668514970~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008224a5f",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2655.36",
+                "allotment": 10,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2655.36",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|58|26|JSU.AS|CGW-BAR-HB|HB||1~1~0||N@06~~200d02~-1853152958~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008236b5e",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2910.54",
+                "allotment": 10,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2910.54",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "JSU.AS-1",
+            "name": "JUNIOR SUITE CLASSIC",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|58|26|JSU.AS-1|CGW-BAR-BB|BB||1~1~0||N@06~~200bde~-818871158~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008224a5f",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2655.36",
+                "allotment": 20,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2655.36",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|58|26|JSU.AS-1|CGW-BAR-HB|HB||1~1~0||N@06~~200d02~-1003509146~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008236b5e",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2910.54",
+                "allotment": 20,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2910.54",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "TWN.VM-3",
+            "name": "TWIN SEA VIEW",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|58|26|TWN.VM-3|CGW-BAR-BB|BB||1~1~0||N@06~~200c61~-177644202~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008254ad1",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "2769.84",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "2769.84",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|58|26|TWN.VM-3|CGW-BAR-HB|HB||1~1~0||N@06~~200ec2~542341724~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008209ce6",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "3302.09",
+                "allotment": 5,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "3302.09",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "JSU.C3",
+            "name": "JUNIOR SUITE CAPACITY 3",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|58|26|JSU.C3|CGW-BAR-BB|BB||1~1~0||N@06~~2001027~1090976879~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000820ee1e",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "3614.14",
+                "allotment": 10,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "3614.14",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|58|26|JSU.C3|CGW-BAR-HB|HB||1~1~0||N@06~~2001210~-32833115~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008239fc9",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "4041.57",
+                "allotment": 10,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "4041.57",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          }
+        ],
+        "minRate": "1836.36",
+        "maxRate": "4041.57",
+        "currency": "EUR"
+      },
+      {
+        "code": 16,
+        "name": "Elba Castillo San Jorge y Antigua Suite Hotel",
+        "categoryCode": "3EST",
+        "categoryName": "3 STARS",
+        "destinationCode": "FUE",
+        "destinationName": "Fuerteventura",
+        "zoneCode": 24,
+        "zoneName": "Caleta de Fuste",
+        "latitude": "28.3997424",
+        "longitude": "-13.8561724",
+        "reviews": [
+          {
+            "rate": 3.98,
+            "reviewCount": 56,
+            "type": "HOTELBEDS"
+          }
+        ],
+        "rooms": [
+          {
+            "code": "APT.B1-1",
+            "name": "1 BEDROOM APARTMENT 1 ADULT + 1 CHILD",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.B1-1|CG-OPACA BB|BB||1~1~0||P@06~~23c3a5~1290923438~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000823c3a5",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "933.60",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "933.60",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.B1-1|CG-NAC BB|BB||1~1~0||N@06~~25f4b4~413151518~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824b3c3",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "963.75",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "963.75",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.B1-1|CG-OPACA HB|HB||1~1~0||P@06~~24b44a~1312384494~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000824b44a",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1098.75",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1098.75",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.B1-1|CG-INT HB|HB||1~1~0||N@06~~20a58a~340033789~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000820f46e",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1134.15",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1134.15",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.B1-1|CG-OPACA AI|AI||1~1~0||P@06~~2414f0~-1918543762~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082414f0",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1264.65",
+                "allotment": 4,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "AI",
+                "boardName": "ALL INCLUSIVE",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1264.65",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.B1-1|CG-INT AI|AI||1~1~0||N@06~~20f660~1936262958~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000822d519",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1305.45",
+                "allotment": 2,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "AI",
+                "boardName": "ALL INCLUSIVE",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1305.45",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          },
+          {
+            "code": "APT.VM",
+            "name": "1 BEDROOM APARTMENT SEA VIEW SINGLE USE",
+            "rates": [
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.VM|CG-OPACA BB|BB||1~1~0||P@06~~25042a~384055722~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000825042a",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1066.80",
+                "allotment": 1,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1066.80",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.VM|CG-NAC BB|BB||1~1~0||N@06~~255560~-1856789477~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000821e44d",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1101.30",
+                "allotment": 1,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "BB",
+                "boardName": "BED AND BREAKFAST",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1101.30",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.VM|CG-OPACA HB|HB||1~1~0||P@06~~25f4cf~-224375126~N~~~NOR~726CEB918526427166407436783500AAUK0000006000000000825f4cf",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1231.95",
+                "allotment": 1,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1231.95",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.VM|CG-INT HB|HB||1~1~0||N@06~~200636~2079251235~N~~~NOR~726CEB918526427166407436783500AAUK000000600000000082464f7",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1271.70",
+                "allotment": 1,
+                "paymentType": "AT_WEB",
+                "packaging": false,
+                "boardCode": "HB",
+                "boardName": "HALF BOARD",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1271.70",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              },
+              {
+                "rateKey": "20220925|20221010|W|53|16|APT.VM|CG-OPACA AI|AI||1~1~0||P@06~~246575~801981450~N~~~NOR~726CEB918526427166407436783500AAUK00000060000000008246575",
+                "rateClass": "NOR",
+                "rateType": "BOOKABLE",
+                "net": "1397.70",
+                "allotment": 1,
+                "paymentType": "AT_WEB",
+                "packaging": true,
+                "boardCode": "AI",
+                "boardName": "ALL INCLUSIVE",
+                "cancellationPolicies": [
+                  {
+                    "amount": "1397.70",
+                    "from": "2022-09-24T23:59:00+01:00"
+                  }
+                ],
+                "rooms": 1,
+                "adults": 1,
+                "children": 0
+              }
+            ]
+          }
+        ],
+        "minRate": "933.60",
+        "maxRate": "1397.70",
+        "currency": "EUR"
+      }
+    ],
+    "checkIn": "2022-09-25",
+    "total": 6,
+    "checkOut": "2022-10-10"
+  }
+}
