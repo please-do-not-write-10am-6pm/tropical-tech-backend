@@ -32,8 +32,10 @@ export const getAll = async (req, res) => {
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
+  const isOld = new Date(req.body.stay.checkIn).getTime() >= new Date().getTime() ? true : false
+
   const stay = {
-    checkIn: req.body.stay.checkIn,
+    checkIn: isOld ? req.body.stay.checkIn : new Date().toISOString().split('T')[0],
     checkOut: req.body.stay.checkOut
   }
   query.stay = stay
