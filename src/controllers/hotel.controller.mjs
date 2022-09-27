@@ -338,7 +338,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   try {
     const params = {
       access_key: process.env.geoApiKey,
-      query: 'London'
+      query: 'Paris'
     }
 
     const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
@@ -350,17 +350,6 @@ export const getRecentSearchedHotels = async (req, res) => {
     console.log('error', error)
   }
   geolocation.longitude && (query.geolocation = geolocation)
-
-  // let numArr = []
-  // for (let i = 1; i < 50; i++) {
-  //   let num = Math.floor(Math.random() * 7890) + 1
-  //   if (numArr.indexOf(num) === -1) numArr.push(num)
-  // }
-
-  // const hotels = {
-  //   hotel: numArr
-  // }
-  // query.hotels = hotels
 
   try {
     const { data } = await axios.post(url, query)
