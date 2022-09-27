@@ -71,7 +71,7 @@ export const getAll = async (req, res) => {
     geolocation.radius = 100
     geolocation.unit = 'km'
   } catch (error) {
-    console.log('error', error)
+    console.log('err', error)
   }
   geolocation.longitude && (query.geolocation = geolocation)
   const end = { latitude: Number(geolocation.latitude), longitude: Number(geolocation.longitude) }
