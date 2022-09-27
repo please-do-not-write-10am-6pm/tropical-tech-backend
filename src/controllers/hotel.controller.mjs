@@ -264,17 +264,6 @@ export const getMostPopularHotels = async (req, res) => {
   }
   geolocation.longitude && (query.geolocation = geolocation)
 
-  // let numArr = []
-  // for (let i = 0; i < 50; i++) {
-  //   let num = Math.floor(Math.random() * 12000) + 1
-  //   if (numArr.indexOf(num) === -1) numArr.push(num)
-  // }
-
-  // const hotels = {
-  //   hotel: numArr
-  // }
-  // query.hotels = hotels
-
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
