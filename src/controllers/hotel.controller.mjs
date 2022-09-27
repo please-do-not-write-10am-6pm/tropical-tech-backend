@@ -328,7 +328,7 @@ export const getRecentSearchedHotels = async (req, res) => {
     {
       type: 'HOTELBEDS',
       maxRate: 5,
-      minRate: 1,
+      minRate: 3,
       minReviewCount: 3
     }
   ]
@@ -338,7 +338,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   try {
     const params = {
       access_key: process.env.geoApiKey,
-      query: 'London'
+      query: 'Singapore'
     }
 
     const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
