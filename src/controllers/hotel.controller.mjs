@@ -18,7 +18,6 @@ axios.interceptors.request.use(
       config.headers['secret'] = privateKey
       config.headers['X-Signature'] = hash
     }
-    console.log(config.headers)
     return config
   },
   (err) => {
@@ -27,8 +26,6 @@ axios.interceptors.request.use(
 )
 
 export const getAll = async (req, res) => {
-  console.log('req.body', req.body)
-
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
@@ -80,7 +77,7 @@ export const getAll = async (req, res) => {
   const end = { latitude: Number(geolocation.latitude), longitude: Number(geolocation.longitude) }
 
   const filter = {
-    maxHotels: 18
+    maxHotels: 9
   }
   query.filter = filter
 
@@ -104,10 +101,8 @@ export const getAll = async (req, res) => {
   ]
   query.reviews = reviews
   try {
-    console.log('searchquery', query)
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
-    console.log('searchedHotelData', searchedHotelData)
     const response = []
 
     for (let i = 0; i < searchedHotelData.hotels.hotels.length; i++) {
@@ -178,7 +173,6 @@ export const getHotelById = async (req, res) => {
 }
 
 export const getHotelRateById = async (req, res) => {
-  console.log('rate params', req.params)
   const { id } = req.params
   const url = `${process.env.hotelContentApi_ENDPOINT}types/ratecommentdetails?date=2022-09-24&code=${id}`
   try {
@@ -283,8 +277,6 @@ export const getMostPopularHotels = async (req, res) => {
 
   try {
     const { data } = await axios.post(url, query)
-    console.log('most query', query)
-    console.log('most hotel data', data)
     let searchedHotelData = data
     const response = []
 
@@ -310,7 +302,6 @@ export const getMostPopularHotels = async (req, res) => {
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
-    console.log('most hotel respones', response)
     return res.json(response)
   } catch (error) {
     const status = error.response && error.response.status ? error.response.status : 500
@@ -409,7 +400,6 @@ export const getRecentSearchedHotels = async (req, res) => {
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
-    console.log('recent hotel response', response)
     return res.json(response)
   } catch (error) {
     const status = error.response && error.response.status ? error.response.status : 500
@@ -510,7 +500,6 @@ export const getDestinationIdeaHotels = async (req, res) => {
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
-    console.log('destination hotel response', response)
     return res.json(response)
   } catch (error) {
     const status = error.response && error.response.status ? error.response.status : 500
