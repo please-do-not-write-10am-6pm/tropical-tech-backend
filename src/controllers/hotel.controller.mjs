@@ -320,7 +320,8 @@ export const getRecentSearchedHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4
+    maxHotels: 4,
+    maxRate: 500
   }
   query.filter = filter
 
@@ -329,6 +330,12 @@ export const getRecentSearchedHotels = async (req, res) => {
       type: 'HOTELBEDS',
       maxRate: 5,
       minRate: 2,
+      minReviewCount: 3
+    },
+    {
+      type: 'TRIPADVISOR',
+      maxRate: 5,
+      minRate: 3,
       minReviewCount: 3
     }
   ]
