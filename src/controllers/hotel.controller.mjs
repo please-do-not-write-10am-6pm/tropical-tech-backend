@@ -316,7 +316,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   let query = {}
 
   let currentDate = new Date()
-  let nextDate = new Date(new Date().getTime() + 48 * 3600 * 1000)
+  let nextDate = new Date(new Date().getTime() + 24 * 3600 * 1000)
   const stay = {
     checkIn: currentDate.toISOString().split('T')[0],
     checkOut: nextDate.toISOString().split('T')[0]
@@ -334,7 +334,7 @@ export const getRecentSearchedHotels = async (req, res) => {
 
   const filter = {
     maxHotels: 4,
-    maxRate: 500
+    maxRate: 150
   }
   query.filter = filter
 
@@ -343,12 +343,6 @@ export const getRecentSearchedHotels = async (req, res) => {
       type: 'HOTELBEDS',
       maxRate: 5,
       minRate: 2,
-      minReviewCount: 3
-    },
-    {
-      type: 'TRIPADVISOR',
-      maxRate: 5,
-      minRate: 3,
       minReviewCount: 3
     }
   ]
