@@ -18,6 +18,7 @@ axios.interceptors.request.use(
       config.headers['secret'] = privateKey
       config.headers['X-Signature'] = hash
     }
+    console.log(config.headers)
     return config
   },
   (err) => {
@@ -110,18 +111,28 @@ export const getAll = async (req, res) => {
       const { data } = await axios.get(contentUrl)
       const item = {}
 
+      item.code = searchedHotelData.hotels.hotels[i].code
       item.name = searchedHotelData.hotels.hotels[i].name
       item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
       item.currency = searchedHotelData.hotels.hotels[i].currency
-
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.image = data.hotel.images.filter(
         (item) => item.type.description.content === 'Room'
       )[0].path
       item.country = data.hotel.country.description.content
-      item.city = data.hotel.state.name
       item.address = data.hotel.address.content
       item.coordinates = data.hotel.coordinates
+      item.city = data.hotel.state.name
+      item.from = searchedHotelData.hotels.checkIn
+      item.to = searchedHotelData.hotels.checkOut
+      item.distance = haversine(start, end, { unit: 'mile' })
+
+      item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
+      item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
+      item.taxes =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
       item.cancellationPolicies = searchedHotelData.hotels.hotels[i].rooms[0].rates[0]
         .cancellationPolicies
         ? searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
@@ -129,17 +140,13 @@ export const getAll = async (req, res) => {
             amount: '0',
             from: 'Anytime'
           }
-      item.code = searchedHotelData.hotels.hotels[i].code
       item.roomType = searchedHotelData.hotels.hotels[i].rooms[0].name
+      item.bedType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].boardName
       item.freeCancellation =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateClass === 'NOR' ? true : false
       item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
       item.noprepaymentneeded =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].paymentType === 'AT_WEB' ? false : true
-      item.bedType = data.hotel.rooms[0].type.description.content
-      item.from = searchedHotelData.hotels.checkIn
-      item.to = searchedHotelData.hotels.checkOut
-      item.distance = haversine(start, end, { unit: 'mile' })
       response.push(item)
     }
     return res.json(response)
@@ -287,6 +294,12 @@ export const getMostPopularHotels = async (req, res) => {
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
       item.city = data.hotel.state.name
       item.currency = searchedHotelData.hotels.hotels[i].currency
+      item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
+      item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
+      item.taxes =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
@@ -379,9 +392,15 @@ export const getRecentSearchedHotels = async (req, res) => {
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.code = searchedHotelData.hotels.hotels[i].code
       item.currency = searchedHotelData.hotels.hotels[i].currency
-      item.from = searchedHotelData.hotels.checkIn
       item.cancellationPolicies =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
+      item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
+      item.taxes =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
+      item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
     }
@@ -481,6 +500,12 @@ export const getDestinationIdeaHotels = async (req, res) => {
       item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
       item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
+      item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
+      item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
+      item.taxes =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
@@ -580,6 +605,12 @@ export const getBestDealHotels = async (req, res) => {
       item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.currency = searchedHotelData.hotels.hotels[i].currency
+      item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
+      item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
+      item.taxes =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
@@ -588,5 +619,38 @@ export const getBestDealHotels = async (req, res) => {
   } catch (error) {
     const status = error.response && error.response.status ? error.response.status : 500
     res.status(status).json({ error: error.message })
+  }
+}
+
+export const isBookable = async (req, res) => {
+  const { rateKey } = req.body
+  const rooms = []
+  rooms.push({ rateKey: rateKey })
+  let url = `${process.env.hotelBookingApi_ENDPOINT}checkrates`
+  try {
+    const { data } = await axios.post(url, rooms)
+    return res.json(data)
+  } catch (error) {
+    res.json({ error: error.message })
+  }
+}
+
+export const booking = async (req, res) => {
+  const { holder, rateKey, clientReference } = req.body
+  let url = `${process.env.hotelBookingApi_ENDPOINT}bookings`
+  const query = {}
+  query.holder = holder
+  query.rooms = [
+    {
+      rateKey: rateKey
+    }
+  ]
+  query.clientReference = clientReference
+  try {
+    console.log('booking query', query)
+    const { data } = await axios.post(url, query)
+    return res.json(data)
+  } catch (error) {
+    res.json({ error: error.message })
   }
 }

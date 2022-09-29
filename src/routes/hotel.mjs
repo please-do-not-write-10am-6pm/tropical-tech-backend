@@ -9,7 +9,9 @@ import {
   getMostPopularHotels,
   getRecentSearchedHotels,
   getDestinationIdeaHotels,
-  getBestDealHotels
+  getBestDealHotels,
+  isBookable,
+  booking
 } from '../controllers/hotel.controller.mjs'
 
 const hotelRouter = Router()
@@ -23,5 +25,7 @@ hotelRouter.get('/mostpopular', getMostPopularHotels)
 hotelRouter.get('/recentsearch', getRecentSearchedHotels)
 hotelRouter.get('/destinationideas', getDestinationIdeaHotels)
 hotelRouter.get('/bestdeal', getBestDealHotels)
+hotelRouter.post('/isBookable', isBookable)
+hotelRouter.post('/bookings', booking)
 
 export default hotelRouter
