@@ -334,7 +334,7 @@ export const getRecentSearchedHotels = async (req, res) => {
 
   const filter = {
     maxHotels: 4,
-    maxRate: 150
+    maxRate: 300
   }
   query.filter = filter
 
@@ -342,7 +342,7 @@ export const getRecentSearchedHotels = async (req, res) => {
     {
       type: 'HOTELBEDS',
       maxRate: 5,
-      minRate: 2,
+      minRate: 1,
       minReviewCount: 3
     }
   ]
