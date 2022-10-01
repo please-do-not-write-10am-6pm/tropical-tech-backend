@@ -27,6 +27,7 @@ axios.interceptors.request.use(
 )
 
 export const getAll = async (req, res) => {
+  console.log('reqbody', req.body)
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
@@ -75,10 +76,9 @@ export const getAll = async (req, res) => {
     console.log('err', error)
   }
   geolocation.longitude && (query.geolocation = geolocation)
-  const end = { latitude: Number(geolocation.latitude), longitude: Number(geolocation.longitude) }
 
   const filter = {
-    maxHotels: 7
+    maxHotels: 50
   }
   query.filter = filter
 
@@ -101,6 +101,9 @@ export const getAll = async (req, res) => {
     }
   ]
   query.reviews = reviews
+
+  query.dailyRate = true
+  console.log('query', query)
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
@@ -110,6 +113,10 @@ export const getAll = async (req, res) => {
       const contentUrl = `${process.env.hotelContentApi_ENDPOINT}hotels/${searchedHotelData.hotels.hotels[i].code}/details`
       const { data } = await axios.get(contentUrl)
       const item = {}
+      const end = {
+        latitude: Number(data.hotel.coordinates.latitude),
+        longitude: Number(data.hotel.coordinates.longitude)
+      }
 
       item.code = searchedHotelData.hotels.hotels[i].code
       item.name = searchedHotelData.hotels.hotels[i].name
@@ -125,7 +132,7 @@ export const getAll = async (req, res) => {
       item.city = data.hotel.state.name
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
-      item.distance = haversine(start, end, { unit: 'mile' })
+      item.distance = haversine(start, end, { unit: 'km' })
 
       item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
       item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
