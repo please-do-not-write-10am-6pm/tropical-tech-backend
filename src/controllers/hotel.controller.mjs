@@ -78,7 +78,7 @@ export const getAll = async (req, res) => {
   geolocation.longitude && (query.geolocation = geolocation)
 
   const filter = {
-    maxHotels: 7
+    maxHotels: 50
   }
   query.filter = filter
 
@@ -108,8 +108,23 @@ export const getAll = async (req, res) => {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
     const response = []
+    let page = req.body.page || 0
+    let limit = req.body.limit || 7
+    let length =
+      limit * (page + 1) > searchedHotelData.hotels.hotels.length
+        ? searchedHotelData.hotels.hotels.length
+        : limit * (page + 1)
 
-    for (let i = 0; i < searchedHotelData.hotels.hotels.length; i++) {
+    console.log('length', length)
+    for (let i = limit * page; i < length; i++) {
+      console.log(
+        'searchedHotelData.hotels.hotels.length',
+        searchedHotelData.hotels.hotels.length,
+        i
+      )
+      if (limit * page > searchedHotelData.hotels.hotels.length) {
+        break
+      }
       const contentUrl = `${process.env.hotelContentApi_ENDPOINT}hotels/${searchedHotelData.hotels.hotels[i].code}/details`
       const { data } = await axios.get(contentUrl)
       const item = {}
@@ -158,6 +173,7 @@ export const getAll = async (req, res) => {
     }
     return res.json(response)
   } catch (error) {
+    console.log('error here')
     const status = error.response && error.response.status ? error.response.status : 500
     res.status(status).json({ error: error.message })
   }
@@ -307,6 +323,7 @@ export const getMostPopularHotels = async (req, res) => {
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
+      item.coordinates = data.hotel.coordinates
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
@@ -401,6 +418,7 @@ export const getRecentSearchedHotels = async (req, res) => {
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
+      item.coordinates = data.hotel.coordinates
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
@@ -507,6 +525,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
+      item.coordinates = data.hotel.coordinates
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
@@ -612,6 +631,7 @@ export const getBestDealHotels = async (req, res) => {
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes &&
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].taxes.taxes[0].amount
+      item.coordinates = data.hotel.coordinates
       item.from = searchedHotelData.hotels.checkIn
       item.to = searchedHotelData.hotels.checkOut
       response.push(item)
