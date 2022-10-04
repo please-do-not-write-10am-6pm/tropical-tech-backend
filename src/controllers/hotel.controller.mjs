@@ -27,7 +27,6 @@ axios.interceptors.request.use(
 )
 
 export const getAll = async (req, res) => {
-  console.log('reqbody', req.body)
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
@@ -103,7 +102,6 @@ export const getAll = async (req, res) => {
   query.reviews = reviews
 
   query.dailyRate = true
-  console.log('query', query)
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
@@ -115,7 +113,6 @@ export const getAll = async (req, res) => {
         ? searchedHotelData.hotels.hotels.length
         : limit * (page + 1)
 
-    console.log('length', length)
     for (let i = limit * page; i < length; i++) {
       console.log(
         'searchedHotelData.hotels.hotels.length',
@@ -357,8 +354,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4,
-    maxRate: 300
+    maxHotels: 4
   }
   query.filter = filter
 
@@ -376,7 +372,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   try {
     const params = {
       access_key: process.env.geoApiKey,
-      query: 'London'
+      query: 'Tokyo'
     }
 
     const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
