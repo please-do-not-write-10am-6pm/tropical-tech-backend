@@ -27,6 +27,7 @@ axios.interceptors.request.use(
 )
 
 export const getAll = async (req, res) => {
+  console.log('req.body', req.body)
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
@@ -91,20 +92,17 @@ export const getAll = async (req, res) => {
       maxRate: 5,
       minRate: 1,
       minReviewCount: 3
-    },
-    {
-      type: 'TRIPADVISOR',
-      maxRate: 5,
-      minRate: 1,
-      minReviewCount: 3
     }
   ]
   query.reviews = reviews
-
-  query.dailyRate = true
+  console.log('query', query)
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
+    console.log('searchedHotelData', searchedHotelData)
+    if (searchedHotelData.hotels.total === 0) {
+      return res.json([])
+    }
     const response = []
     let page = req.body.page || 0
     let limit = req.body.limit || 7
@@ -337,7 +335,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   let query = {}
 
   let currentDate = new Date()
-  let nextDate = new Date(new Date().getTime() + 24 * 3600 * 1000)
+  let nextDate = new Date(new Date().getTime() + 72 * 3600 * 1000)
   const stay = {
     checkIn: currentDate.toISOString().split('T')[0],
     checkOut: nextDate.toISOString().split('T')[0]
@@ -362,8 +360,14 @@ export const getRecentSearchedHotels = async (req, res) => {
     {
       type: 'HOTELBEDS',
       maxRate: 5,
-      minRate: 1,
-      minReviewCount: 3
+      minRate: 3,
+      minReviewCount: 4
+    },
+    {
+      type: 'TRIPADVISOR',
+      maxRate: 5,
+      minRate: 4,
+      minReviewCount: 4
     }
   ]
   query.reviews = reviews
