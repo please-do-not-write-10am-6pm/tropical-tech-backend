@@ -361,13 +361,13 @@ export const getRecentSearchedHotels = async (req, res) => {
       type: 'HOTELBEDS',
       maxRate: 5,
       minRate: 3,
-      minReviewCount: 4
+      minReviewCount: 3
     },
     {
       type: 'TRIPADVISOR',
       maxRate: 5,
-      minRate: 4,
-      minReviewCount: 4
+      minRate: 3,
+      minReviewCount: 3
     }
   ]
   query.reviews = reviews
@@ -376,7 +376,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   try {
     const params = {
       access_key: process.env.geoApiKey,
-      query: 'Tokyo'
+      query: 'Dubai'
     }
 
     const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
@@ -400,18 +400,18 @@ export const getRecentSearchedHotels = async (req, res) => {
       const item = {}
 
       item.name = searchedHotelData.hotels.hotels[i].name
+      item.code = searchedHotelData.hotels.hotels[i].code
+      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
+      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
+      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.image = data.hotel.images.filter(
         (item) => item.type.description.content === 'Room'
       )[0].path
       item.country = data.hotel.country.description.content
-      item.city = data.hotel.state.name
-      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
-      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
-      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
-      item.code = searchedHotelData.hotels.hotels[i].code
-      item.currency = searchedHotelData.hotels.hotels[i].currency
       item.cancellationPolicies =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.city = data.hotel.state.name
+      item.currency = searchedHotelData.hotels.hotels[i].currency
       item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
       item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
       item.taxes =
