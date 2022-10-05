@@ -367,6 +367,7 @@ export const getRecentSearchedHotels = async (req, res) => {
     }
   ]
   query.reviews = reviews
+
   // let geolocation = {}
   // try {
   //   const params = {
