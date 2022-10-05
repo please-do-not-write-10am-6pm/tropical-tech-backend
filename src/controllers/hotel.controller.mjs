@@ -302,7 +302,7 @@ export const getMostPopularHotels = async (req, res) => {
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.image = data.hotel.images.filter(
         (item) => item.type.description.content === 'Room'
-      )[0].path
+      )[0]?.path
       item.country = data.hotel.country.description.content
       item.cancellationPolicies =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
@@ -407,7 +407,7 @@ export const getRecentSearchedHotels = async (req, res) => {
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.image = data.hotel.images.filter(
         (item) => item.type.description.content === 'Room'
-      )[0].path
+      )[0]?.path
       item.country = data.hotel.country.description.content
       item.cancellationPolicies =
         searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
@@ -506,7 +506,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
       item.code = searchedHotelData.hotels.hotels[i].code
       item.image = data.hotel.images.filter(
         (item) => item.type.description.content === 'Room'
-      )[0].path
+      )[0]?.path
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
       item.currency = searchedHotelData.hotels.hotels[i].currency
