@@ -27,7 +27,6 @@ axios.interceptors.request.use(
 )
 
 export const getAll = async (req, res) => {
-  console.log('req.body', req.body)
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
@@ -95,11 +94,9 @@ export const getAll = async (req, res) => {
     }
   ]
   query.reviews = reviews
-  console.log('query', query)
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
-    console.log('searchedHotelData', searchedHotelData)
     if (searchedHotelData.hotels.total === 0) {
       return res.json([])
     }
@@ -112,11 +109,6 @@ export const getAll = async (req, res) => {
         : limit * (page + 1)
 
     for (let i = limit * page; i < length; i++) {
-      console.log(
-        'searchedHotelData.hotels.hotels.length',
-        searchedHotelData.hotels.hotels.length,
-        i
-      )
       if (limit * page > searchedHotelData.hotels.hotels.length) {
         break
       }
@@ -168,7 +160,6 @@ export const getAll = async (req, res) => {
     }
     return res.json(response)
   } catch (error) {
-    console.log('error here')
     const status = error.response && error.response.status ? error.response.status : 500
     res.status(status).json({ error: error.message })
   }
@@ -272,22 +263,27 @@ export const getMostPopularHotels = async (req, res) => {
   ]
   query.reviews = reviews
 
-  let geolocation = {}
-  try {
-    const params = {
-      access_key: process.env.geoApiKey,
-      query: 'London'
-    }
+  // let geolocation = {}
+  // try {
+  //   const params = {
+  //     access_key: process.env.geoApiKey,
+  //     query: 'New York'
+  //   }
 
-    const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-    geolocation.longitude = data.data[0].longitude
-    geolocation.latitude = data.data[0].latitude
-    geolocation.radius = 100
-    geolocation.unit = 'km'
-  } catch (error) {
-    console.log('error', error)
+  //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
+  //   geolocation.longitude = data.data[0].longitude
+  //   geolocation.latitude = data.data[0].latitude
+  //   geolocation.radius = 100
+  //   geolocation.unit = 'km'
+  // } catch (error) {
+  //   console.log('error', error)
+  // }
+  // geolocation.longitude && (query.geolocation = geolocation)
+
+  const hotels = {
+    hotel: [16271, 161485, 9368, 3319, 109425, 142665]
   }
-  geolocation.longitude && (query.geolocation = geolocation)
+  query.hotels = hotels
 
   try {
     const { data } = await axios.post(url, query)
@@ -372,22 +368,27 @@ export const getRecentSearchedHotels = async (req, res) => {
   ]
   query.reviews = reviews
 
-  let geolocation = {}
-  try {
-    const params = {
-      access_key: process.env.geoApiKey,
-      query: 'Dubai'
-    }
+  // let geolocation = {}
+  // try {
+  //   const params = {
+  //     access_key: process.env.geoApiKey,
+  //     query: 'Dubai'
+  //   }
 
-    const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-    geolocation.longitude = data.data[0].longitude
-    geolocation.latitude = data.data[0].latitude
-    geolocation.radius = 100
-    geolocation.unit = 'km'
-  } catch (error) {
-    console.log('error', error)
+  //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
+  //   geolocation.longitude = data.data[0].longitude
+  //   geolocation.latitude = data.data[0].latitude
+  //   geolocation.radius = 100
+  //   geolocation.unit = 'km'
+  // } catch (error) {
+  //   console.log('error', error)
+  // }
+  // geolocation.longitude && (query.geolocation = geolocation)
+
+  const hotels = {
+    hotel: [161485, 180447, 162651, 103297]
   }
-  geolocation.longitude && (query.geolocation = geolocation)
+  query.hotels = hotels
 
   try {
     const { data } = await axios.post(url, query)
@@ -454,7 +455,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
   const filter = {
     maxHotels: 4,
     minRate: 2000,
-    maxRate: 5000
+    maxRate: 10000
   }
   query.filter = filter
 
@@ -468,33 +469,28 @@ export const getDestinationIdeaHotels = async (req, res) => {
   ]
   query.reviews = reviews
 
-  let geolocation = {}
-  try {
-    const params = {
-      access_key: process.env.geoApiKey,
-      query: 'London'
-    }
+  // let geolocation = {}
+  // try {
+  //   const params = {
+  //     access_key: process.env.geoApiKey,
+  //     query: 'Dubai'
+  //   }
 
-    const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-    geolocation.longitude = data.data[0].longitude
-    geolocation.latitude = data.data[0].latitude
-    geolocation.radius = 100
-    geolocation.unit = 'km'
-  } catch (error) {
-    console.log('error', error)
+  //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
+  //   geolocation.longitude = data.data[0].longitude
+  //   geolocation.latitude = data.data[0].latitude
+  //   geolocation.radius = 100
+  //   geolocation.unit = 'km'
+  // } catch (error) {
+  //   console.log('error', error)
+  // }
+  // console.log('geolocation', geolocation)
+  // geolocation.longitude && (query.geolocation = geolocation)
+
+  const hotels = {
+    hotel: [6605, 142665, 6638, 82653]
   }
-  geolocation.longitude && (query.geolocation = geolocation)
-
-  // let numArr = []
-  // for (let i = 0; i < 50; i++) {
-  //   let num = Math.floor(Math.random() * 13000) + 1
-  //   if (numArr.indexOf(num) === -1) numArr.push(num)
-  // }
-
-  // const hotels = {
-  //   hotel: numArr
-  // }
-  // query.hotels = hotels
+  query.hotels = hotels
 
   try {
     const { data } = await axios.post(url, query)
@@ -560,7 +556,7 @@ export const getBestDealHotels = async (req, res) => {
 
   const filter = {
     maxHotels: 4,
-    maxRate: 150
+    maxRate: 100
   }
   query.filter = filter
 
@@ -574,33 +570,27 @@ export const getBestDealHotels = async (req, res) => {
   ]
   query.reviews = reviews
 
-  let geolocation = {}
-  try {
-    const params = {
-      access_key: process.env.geoApiKey,
-      query: 'Barcelona'
-    }
+  // let geolocation = {}
+  // try {
+  //   const params = {
+  //     access_key: process.env.geoApiKey,
+  //     query: 'Berlin'
+  //   }
 
-    const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-    geolocation.longitude = data.data[0].longitude
-    geolocation.latitude = data.data[0].latitude
-    geolocation.radius = 100
-    geolocation.unit = 'km'
-  } catch (error) {
-    console.log('error', error)
+  //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
+  //   geolocation.longitude = data.data[0].longitude
+  //   geolocation.latitude = data.data[0].latitude
+  //   geolocation.radius = 100
+  //   geolocation.unit = 'km'
+  // } catch (error) {
+  //   console.log('error', error)
+  // }
+  // geolocation.longitude && (query.geolocation = geolocation)
+
+  const hotels = {
+    hotel: [376663, 85265, 105915, 417480]
   }
-  geolocation.longitude && (query.geolocation = geolocation)
-
-  // let numArr = []
-  // for (let i = 0; i < 50; i++) {
-  //   let num = Math.floor(Math.random() * 10000) + 1
-  //   if (numArr.indexOf(num) === -1) numArr.push(num)
-  // }
-
-  // const hotels = {
-  //   hotel: numArr
-  // }
-  // query.hotels = hotels
+  query.hotels = hotels
 
   try {
     const { data } = await axios.post(url, query)
@@ -616,7 +606,7 @@ export const getBestDealHotels = async (req, res) => {
       item.code = searchedHotelData.hotels.hotels[i].code
       item.image = data.hotel.images.filter(
         (item) => item.type.description.content === 'Room'
-      )[0].path
+      )[0]?.path
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
       item.cancellationPolicies =
@@ -668,7 +658,6 @@ export const booking = async (req, res) => {
   ]
   query.clientReference = clientReference
   try {
-    console.log('booking query', query)
     const { data } = await axios.post(url, query)
     return res.json(data)
   } catch (error) {
