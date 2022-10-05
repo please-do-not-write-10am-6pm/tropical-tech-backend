@@ -262,6 +262,7 @@ export const getMostPopularHotels = async (req, res) => {
     }
   ]
   query.reviews = reviews
+
   // let geolocation = {}
   // try {
   //   const params = {
