@@ -5,17 +5,17 @@ import haversine from 'haversine'
 
 dotenv.config()
 
-const utcDate = Math.floor(new Date().getTime() / 1000)
 const publicKey = process.env.hotelApi_PUBLICKEY
 const privateKey = process.env.hotelApi_PRIVATEKEY
-const assemble = publicKey + privateKey + utcDate
-const hash = createHash('sha256').update(assemble).digest('hex')
 
 axios.interceptors.request.use(
   (config) => {
-    if (publicKey && privateKey && hash) {
+    if (publicKey && privateKey) {
       config.headers['Api-key'] = publicKey
       config.headers['secret'] = privateKey
+      const utcDate = Math.floor(new Date().getTime() / 1000)
+      const assemble = publicKey + privateKey + utcDate
+      const hash = createHash('sha256').update(assemble).digest('hex')
       config.headers['X-Signature'] = hash
     }
     console.log(config.headers)
@@ -51,7 +51,11 @@ export const getAll = async (req, res) => {
       children:
         req.body && req.body.occupancies && req.body.occupancies[0].children
           ? req.body.occupancies[0].children
-          : 0
+          : 0,
+      paxes:
+        req.body && req.body.occupancies && req.body.occupancies[0].paxes
+          ? req.body.occupancies[0].paxes
+          : []
     }
   ]
   query.occupancies = occupancies
@@ -94,6 +98,7 @@ export const getAll = async (req, res) => {
     }
   ]
   query.reviews = reviews
+  console.log('query', query)
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
