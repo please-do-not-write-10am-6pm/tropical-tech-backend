@@ -336,7 +336,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   let query = {}
 
   let currentDate = new Date()
-  let nextDate = new Date(new Date().getTime() + 72 * 3600 * 1000)
+  let nextDate = new Date(new Date().getTime() + 24 * 3600 * 1000)
   const stay = {
     checkIn: currentDate.toISOString().split('T')[0],
     checkOut: nextDate.toISOString().split('T')[0]
