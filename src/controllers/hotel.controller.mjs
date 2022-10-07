@@ -63,41 +63,135 @@ export const getAll = async (req, res) => {
   const rooms = req.body.rooms
   query.rooms = rooms
 
-  let geolocation = {}
-  try {
-    const params = {
-      access_key: process.env.geoApiKey,
-      query: req.body.destination.destination ? req.body.destination.destination : ''
+  if (
+    req.body.destination.destination !== 'Everywhere' &&
+    req.body.destination.destination !== 'MostPopular' &&
+    req.body.destination.destination !== 'BestDeal'
+  ) {
+    let geolocation = {}
+    try {
+      const params = {
+        access_key: process.env.geoApiKey,
+        query: req.body.destination.destination ? req.body.destination.destination : ''
+      }
+
+      const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
+      geolocation.longitude = data.data[0].longitude
+      geolocation.latitude = data.data[0].latitude
+      geolocation.radius = 100
+      geolocation.unit = 'km'
+
+      query.geolocation = geolocation
+
+      const filter = {
+        maxHotels: 50
+      }
+      query.filter = filter
+
+      const reviews = [
+        {
+          type: 'HOTELBEDS',
+          maxRate: 5,
+          minRate: 1,
+          minReviewCount: 3
+        }
+      ]
+      query.reviews = reviews
+    } catch (error) {
+      console.log('err', error)
     }
+  } else {
+    if (req.body.destination.destination === 'Everywhere') {
+      let arr = []
+      while (arr.length < 300) {
+        let r = Math.floor(Math.random() * 10000) + 1
+        if (arr.indexOf(r) === -1) arr.push(r)
+      }
+      const hotels = {
+        hotel: arr
+      }
+      query.hotels = hotels
 
-    const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-    geolocation.longitude = data.data[0].longitude
-    geolocation.latitude = data.data[0].latitude
-    geolocation.radius = 100
-    geolocation.unit = 'km'
-  } catch (error) {
-    console.log('err', error)
-  }
-  geolocation.longitude && (query.geolocation = geolocation)
+      const filter = {
+        maxHotels: 50
+      }
+      query.filter = filter
 
-  const filter = {
-    maxHotels: 50
+      const reviews = [
+        {
+          type: 'HOTELBEDS',
+          maxRate: 5,
+          minRate: 1,
+          minReviewCount: 3
+        }
+      ]
+      query.reviews = reviews
+    }
+    if (req.body.destination.destination === 'MostPopular') {
+      let arr = []
+      while (arr.length < 300) {
+        let r = Math.floor(Math.random() * 10000) + 1
+        if (arr.indexOf(r) === -1) arr.push(r)
+      }
+      const hotels = {
+        hotel: arr
+      }
+      query.hotels = hotels
+
+      const filter = {
+        maxHotels: 50
+      }
+      query.filter = filter
+
+      const reviews = [
+        {
+          type: 'HOTELBEDS',
+          maxRate: 5,
+          minRate: 3,
+          minReviewCount: 4
+        },
+        {
+          type: 'TRIPADVISOR',
+          maxRate: 5,
+          minRate: 4,
+          minReviewCount: 4
+        }
+      ]
+      query.reviews = reviews
+    }
+    if (req.body.destination.destination === 'BestDeal') {
+      let arr = []
+      while (arr.length < 300) {
+        let r = Math.floor(Math.random() * 10000) + 1
+        if (arr.indexOf(r) === -1) arr.push(r)
+      }
+      const hotels = {
+        hotel: arr
+      }
+      query.hotels = hotels
+
+      const filter = {
+        maxHotels: 50,
+        maxRate: 300
+      }
+      query.filter = filter
+
+      const reviews = [
+        {
+          type: 'HOTELBEDS',
+          maxRate: 5,
+          minRate: 1,
+          minReviewCount: 3
+        }
+      ]
+      query.reviews = reviews
+    }
   }
-  query.filter = filter
 
   const start = req.body.currentLocation
     ? req.body.currentLocation
     : { latitude: 38.722252, longitude: -9.139337 }
 
-  const reviews = [
-    {
-      type: 'HOTELBEDS',
-      maxRate: 5,
-      minRate: 1,
-      minReviewCount: 3
-    }
-  ]
-  query.reviews = reviews
   console.log('query', query)
   try {
     const { data } = await axios.post(url, query)
