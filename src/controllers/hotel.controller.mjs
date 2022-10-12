@@ -78,7 +78,7 @@ export const getAll = async (req, res) => {
       const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
       geolocation.longitude = data.data[0].longitude
       geolocation.latitude = data.data[0].latitude
-      geolocation.radius = 100
+      geolocation.radius = 200
       geolocation.unit = 'km'
 
       query.geolocation = geolocation
@@ -206,6 +206,7 @@ export const getAll = async (req, res) => {
       limit * (page + 1) > searchedHotelData.hotels.hotels.length
         ? searchedHotelData.hotels.hotels.length
         : limit * (page + 1)
+    console.log('length', searchedHotelData.hotels.hotels.length)
 
     for (let i = limit * page; i < length; i++) {
       if (limit * page > searchedHotelData.hotels.hotels.length) {
@@ -342,7 +343,7 @@ export const getMostPopularHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 6
+    maxHotels: 8
   }
   query.filter = filter
 
@@ -366,7 +367,7 @@ export const getMostPopularHotels = async (req, res) => {
   // try {
   //   const params = {
   //     access_key: process.env.geoApiKey,
-  //     query: 'New York'
+  //     query: 'Lisbon'
   //   }
 
   //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
@@ -380,7 +381,7 @@ export const getMostPopularHotels = async (req, res) => {
   // geolocation.longitude && (query.geolocation = geolocation)
 
   const hotels = {
-    hotel: [16271, 161485, 9368, 3319, 109425, 142665]
+    hotel: [16271, 161485, 9368, 3319, 109425, 142665, 3746, 87344, 161053]
   }
   query.hotels = hotels
 
@@ -447,7 +448,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4
+    maxHotels: 10
   }
   query.filter = filter
 
@@ -455,13 +456,13 @@ export const getRecentSearchedHotels = async (req, res) => {
     {
       type: 'HOTELBEDS',
       maxRate: 5,
-      minRate: 3,
+      minRate: 1,
       minReviewCount: 3
     },
     {
       type: 'TRIPADVISOR',
       maxRate: 5,
-      minRate: 3,
+      minRate: 1,
       minReviewCount: 3
     }
   ]
@@ -470,7 +471,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   // try {
   //   const params = {
   //     access_key: process.env.geoApiKey,
-  //     query: 'Dubai'
+  //     query: 'Tokyo'
   //   }
 
   //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
@@ -484,7 +485,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   // geolocation.longitude && (query.geolocation = geolocation)
 
   const hotels = {
-    hotel: [161485, 180447, 162651, 103297]
+    hotel: [161485, 180447, 162651, 103297, 409666, 3456, 3319, 109425, 83698, 138002, 162315]
   }
   query.hotels = hotels
 
@@ -654,7 +655,7 @@ export const getBestDealHotels = async (req, res) => {
 
   const filter = {
     maxHotels: 4,
-    maxRate: 100
+    maxRate: 200
   }
   query.filter = filter
 
