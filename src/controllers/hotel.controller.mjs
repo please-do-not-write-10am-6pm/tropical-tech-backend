@@ -192,7 +192,6 @@ export const getAll = async (req, res) => {
     ? req.body.currentLocation
     : { latitude: 38.722252, longitude: -9.139337 }
 
-  console.log('query', query)
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
@@ -206,7 +205,6 @@ export const getAll = async (req, res) => {
       limit * (page + 1) > searchedHotelData.hotels.hotels.length
         ? searchedHotelData.hotels.hotels.length
         : limit * (page + 1)
-    console.log('length', searchedHotelData.hotels.hotels.length)
 
     for (let i = limit * page; i < length; i++) {
       if (limit * page > searchedHotelData.hotels.hotels.length) {
@@ -448,7 +446,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 10
+    maxHotels: 8
   }
   query.filter = filter
 
@@ -467,6 +465,7 @@ export const getRecentSearchedHotels = async (req, res) => {
     }
   ]
   query.reviews = reviews
+
   // let geolocation = {}
   // try {
   //   const params = {
@@ -482,10 +481,11 @@ export const getRecentSearchedHotels = async (req, res) => {
   // } catch (error) {
   //   console.log('error', error)
   // }
+  // console.log('geolocation', geolocation)
   // geolocation.longitude && (query.geolocation = geolocation)
 
   const hotels = {
-    hotel: [161485, 180447, 162651, 103297, 409666, 3456, 3319, 109425, 83698, 138002, 162315]
+    hotel: [161485, 180447, 409666, 138002, 83726, 162315, 3319, 109425, 1]
   }
   query.hotels = hotels
 
@@ -572,7 +572,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
   // try {
   //   const params = {
   //     access_key: process.env.geoApiKey,
-  //     query: 'Dubai'
+  //     query: 'Lisbon'
   //   }
 
   //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
@@ -587,7 +587,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
   // geolocation.longitude && (query.geolocation = geolocation)
 
   const hotels = {
-    hotel: [6605, 142665, 6638, 82653]
+    hotel: [6605, 142665, 6638, 35527, 151634]
   }
   query.hotels = hotels
 
