@@ -4,24 +4,23 @@ Back-End HDR
 
 ---
 
-## Sobre
-    
-Esse projeto foi desenvolvido para o APP HDR
+## About
 
-## Ferramentas Utilizadas
+This project was developed for the HDR APP
+
+## How to use
 
 - [Express]()
 - [Jsonwebtoken]()
 - [Mongoose]()
 - [Stripe]()
-- [Nuvopay]()
-- [HotelBeads]()
+- [HotelBeds third party]()
+- [Google map apis]()
 
-## Como utilizar
+## How to install
 
 ```bash
     $ yarn install
 
     $ yarn dev
 ```
-<h3>Desenvolvido por Gabriel de Carvalho Dias </h3>
