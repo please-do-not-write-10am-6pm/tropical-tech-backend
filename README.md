@@ -6,7 +6,7 @@ Back-End HDR
 
 ## About
 
-This project was developed for the HDR APP
+This project was developed for the HDR Apk
 
 ## How to use
 
