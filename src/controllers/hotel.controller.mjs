@@ -81,7 +81,7 @@ export const getAll = async (req, res) => {
       geolocation.radius = 200
       geolocation.unit = 'km'
 
-      query.geolocation = geolocation
+      geolocation.longitude && (query.geolocation = geolocation)
 
       const filter = {
         maxHotels: 50
@@ -191,6 +191,8 @@ export const getAll = async (req, res) => {
   const start = req.body.currentLocation
     ? req.body.currentLocation
     : { latitude: 38.722252, longitude: -9.139337 }
+
+  console.log('search query', query)
 
   try {
     const { data } = await axios.post(url, query)
@@ -319,11 +321,11 @@ export const getHotelTestById = async (req, res) => {
   }
 }
 
-export const getMostPopularHotels = async (req, res) => {
+export const getRecentSearchedHotels = async (req, res) => {
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
-  let currentDate = new Date()
+  let currentDate = new Date(new Date().getTime() + 24 * 3600 * 1000)
   let nextDate = new Date(new Date().getTime() + 72 * 3600 * 1000)
   const stay = {
     checkIn: currentDate.toISOString().split('T')[0],
@@ -341,7 +343,7 @@ export const getMostPopularHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 8
+    maxHotels: 4
   }
   query.filter = filter
 
@@ -367,7 +369,6 @@ export const getMostPopularHotels = async (req, res) => {
   //     access_key: process.env.geoApiKey,
   //     query: 'Lisbon'
   //   }
-
   //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
   //   geolocation.longitude = data.data[0].longitude
   //   geolocation.latitude = data.data[0].latitude
@@ -379,7 +380,8 @@ export const getMostPopularHotels = async (req, res) => {
   // geolocation.longitude && (query.geolocation = geolocation)
 
   const hotels = {
-    hotel: [16271, 161485, 9368, 3319, 109425, 142665, 3746, 87344, 161053]
+    hotel: [142665, 87344, 161053, 161485]
+    // 161485/109425/9368/16271/3319/3746
   }
   query.hotels = hotels
 
@@ -395,17 +397,17 @@ export const getMostPopularHotels = async (req, res) => {
 
       item.name = searchedHotelData.hotels.hotels[i].name
       item.code = searchedHotelData.hotels.hotels[i].code
-      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
-      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
-      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.image = data.hotel.images.filter(
         (item) => item.type.description.content === 'Room'
       )[0]?.path
       item.country = data.hotel.country.description.content
-      item.cancellationPolicies =
-        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
       item.city = data.hotel.state.name
       item.currency = searchedHotelData.hotels.hotels[i].currency
+      item.cancellationPolicies =
+        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
+      item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
+      item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
       item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
       item.rateType = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateType
       item.taxes =
@@ -424,7 +426,7 @@ export const getMostPopularHotels = async (req, res) => {
   }
 }
 
-export const getRecentSearchedHotels = async (req, res) => {
+export const getMostPopularHotels = async (req, res) => {
   const url = `${process.env.hotelBookingApi_ENDPOINT}hotels`
   let query = {}
 
@@ -485,7 +487,7 @@ export const getRecentSearchedHotels = async (req, res) => {
   // geolocation.longitude && (query.geolocation = geolocation)
 
   const hotels = {
-    hotel: [161485, 180447, 409666, 138002, 83726, 162315, 3319, 109425, 1]
+    hotel: [161485, 180447, 409666, 138002, 83726, 162315, 3319, 109425]
   }
   query.hotels = hotels
 
@@ -552,9 +554,9 @@ export const getDestinationIdeaHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4,
-    minRate: 2000,
-    maxRate: 10000
+    maxHotels: 4
+    // minRate: 2000,
+    // maxRate: 10000
   }
   query.filter = filter
 
@@ -562,36 +564,37 @@ export const getDestinationIdeaHotels = async (req, res) => {
     {
       type: 'HOTELBEDS',
       maxRate: 5,
-      minRate: 4,
-      minReviewCount: 5
+      minRate: 1,
+      minReviewCount: 3
     }
   ]
   query.reviews = reviews
 
-  // let geolocation = {}
-  // try {
-  //   const params = {
-  //     access_key: process.env.geoApiKey,
-  //     query: 'Lisbon'
-  //   }
+  let geolocation = {}
+  try {
+    const params = {
+      access_key: process.env.geoApiKey,
+      query: 'London'
+    }
 
-  //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-  //   geolocation.longitude = data.data[0].longitude
-  //   geolocation.latitude = data.data[0].latitude
-  //   geolocation.radius = 100
-  //   geolocation.unit = 'km'
-  // } catch (error) {
-  //   console.log('error', error)
-  // }
-  // console.log('geolocation', geolocation)
-  // geolocation.longitude && (query.geolocation = geolocation)
-
-  const hotels = {
-    hotel: [6605, 142665, 6638, 35527, 151634]
+    const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
+    geolocation.latitude = data.data[0].latitude
+    geolocation.longitude = data.data[0].longitude
+    geolocation.radius = 100
+    geolocation.unit = 'km'
+  } catch (error) {
+    console.log('error', error)
   }
-  query.hotels = hotels
+
+  geolocation.longitude && (query.geolocation = geolocation)
+
+  // const hotels = {
+  //   hotel: [6605, 142665, 6638, 35527, 151634]
+  // }
+  // query.hotels = hotels
 
   try {
+    console.log('query', query, 'url', url)
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
     const response = []
@@ -627,6 +630,7 @@ export const getDestinationIdeaHotels = async (req, res) => {
     }
     return res.json(response)
   } catch (error) {
+    // console.log('server error: ', error)
     const status = error.response && error.response.status ? error.response.status : 500
     res.status(status).json({ error: error.message })
   }
@@ -664,21 +668,22 @@ export const getBestDealHotels = async (req, res) => {
       type: 'HOTELBEDS',
       maxRate: 5,
       minRate: 1,
-      minReviewCount: 5
+      minReviewCount: 3
     }
   ]
   query.reviews = reviews
+
   // let geolocation = {}
   // try {
   //   const params = {
   //     access_key: process.env.geoApiKey,
-  //     query: 'Berlin'
+  //     query: 'London'
   //   }
 
   //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-  //   geolocation.longitude = data.data[0].longitude
   //   geolocation.latitude = data.data[0].latitude
-  //   geolocation.radius = 100
+  //   geolocation.longitude = data.data[0].longitude
+  //   geolocation.radius = 20
   //   geolocation.unit = 'km'
   // } catch (error) {
   //   console.log('error', error)
