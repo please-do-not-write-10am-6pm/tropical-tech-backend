@@ -192,8 +192,6 @@ export const getAll = async (req, res) => {
     ? req.body.currentLocation
     : { latitude: 38.722252, longitude: -9.139337 }
 
-  console.log('search query', query)
-
   try {
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
@@ -387,6 +385,7 @@ export const getRecentSearchedHotels = async (req, res) => {
 
   try {
     const { data } = await axios.post(url, query)
+    console.log('data', data)
     let searchedHotelData = data
     const response = []
 
@@ -554,9 +553,9 @@ export const getDestinationIdeaHotels = async (req, res) => {
   query.occupancies = occupancies
 
   const filter = {
-    maxHotels: 4
-    // minRate: 2000,
-    // maxRate: 10000
+    maxHotels: 4,
+    minRate: 2000,
+    maxRate: 10000
   }
   query.filter = filter
 
@@ -570,31 +569,31 @@ export const getDestinationIdeaHotels = async (req, res) => {
   ]
   query.reviews = reviews
 
-  let geolocation = {}
-  try {
-    const params = {
-      access_key: process.env.geoApiKey,
-      query: 'London'
-    }
+  // let geolocation = {}
+  // try {
+  //   const params = {
+  //     access_key: process.env.geoApiKey,
+  //     query: 'London'
+  //   }
 
-    const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-    geolocation.latitude = data.data[0].latitude
-    geolocation.longitude = data.data[0].longitude
-    geolocation.radius = 100
-    geolocation.unit = 'km'
-  } catch (error) {
-    console.log('error', error)
-  }
-
-  geolocation.longitude && (query.geolocation = geolocation)
-
-  // const hotels = {
-  //   hotel: [6605, 142665, 6638, 35527, 151634]
+  //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
+  //   console.log('data', data)
+  //   geolocation.latitude = data.data[0].latitude
+  //   geolocation.longitude = data.data[0].longitude
+  //   geolocation.radius = 20
+  //   geolocation.unit = 'km'
+  // } catch (error) {
+  //   console.log('error', error)
   // }
-  // query.hotels = hotels
+
+  // geolocation.longitude && (query.geolocation = geolocation)
+
+  const hotels = {
+    hotel: [6605, 142665, 6638, 35527, 151634]
+  }
+  query.hotels = hotels
 
   try {
-    console.log('query', query, 'url', url)
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
     const response = []
@@ -630,7 +629,6 @@ export const getDestinationIdeaHotels = async (req, res) => {
     }
     return res.json(response)
   } catch (error) {
-    // console.log('server error: ', error)
     const status = error.response && error.response.status ? error.response.status : 500
     res.status(status).json({ error: error.message })
   }
