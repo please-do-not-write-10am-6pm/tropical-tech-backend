@@ -18,7 +18,6 @@ axios.interceptors.request.use(
       const hash = createHash('sha256').update(assemble).digest('hex')
       config.headers['X-Signature'] = hash
     }
-    console.log(config.headers)
     return config
   },
   (err) => {
@@ -577,7 +576,6 @@ export const getDestinationIdeaHotels = async (req, res) => {
   //   }
 
   //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
-  //   console.log('data', data)
   //   geolocation.latitude = data.data[0].latitude
   //   geolocation.longitude = data.data[0].longitude
   //   geolocation.radius = 20
