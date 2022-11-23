@@ -378,13 +378,11 @@ export const getRecentSearchedHotels = async (req, res) => {
 
   const hotels = {
     hotel: [142665, 87344, 161053, 161485]
-    // 161485/109425/9368/16271/3319/3746
   }
   query.hotels = hotels
 
   try {
     const { data } = await axios.post(url, query)
-    console.log('data', data)
     let searchedHotelData = data
     const response = []
 
@@ -401,8 +399,13 @@ export const getRecentSearchedHotels = async (req, res) => {
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
       item.currency = searchedHotelData.hotels.hotels[i].currency
-      item.cancellationPolicies =
-        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.cancellationPolicies = searchedHotelData.hotels.hotels[i].rooms[0].rates[0]
+        .cancellationPolicies
+        ? searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+        : {
+            amount: '0',
+            from: 'Anytime'
+          }
       item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
       item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
@@ -508,8 +511,13 @@ export const getMostPopularHotels = async (req, res) => {
         (item) => item.type.description.content === 'Room'
       )[0]?.path
       item.country = data.hotel.country.description.content
-      item.cancellationPolicies =
-        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.cancellationPolicies = searchedHotelData.hotels.hotels[i].rooms[0].rates[0]
+        .cancellationPolicies
+        ? searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+        : {
+            amount: '0',
+            from: 'Anytime'
+          }
       item.city = data.hotel.state.name
       item.currency = searchedHotelData.hotels.hotels[i].currency
       item.rateKey = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].rateKey
@@ -572,13 +580,13 @@ export const getDestinationIdeaHotels = async (req, res) => {
   // try {
   //   const params = {
   //     access_key: process.env.geoApiKey,
-  //     query: 'London'
+  //     query: 'New York'
   //   }
 
   //   const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
   //   geolocation.latitude = data.data[0].latitude
   //   geolocation.longitude = data.data[0].longitude
-  //   geolocation.radius = 20
+  //   geolocation.radius = 200
   //   geolocation.unit = 'km'
   // } catch (error) {
   //   console.log('error', error)
@@ -609,8 +617,13 @@ export const getDestinationIdeaHotels = async (req, res) => {
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
       item.currency = searchedHotelData.hotels.hotels[i].currency
-      item.cancellationPolicies =
-        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.cancellationPolicies = searchedHotelData.hotels.hotels[i].rooms[0].rates[0]
+        .cancellationPolicies
+        ? searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+        : {
+            amount: '0',
+            from: 'Anytime'
+          }
       item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
       item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
@@ -708,8 +721,13 @@ export const getBestDealHotels = async (req, res) => {
       )[0]?.path
       item.country = data.hotel.country.description.content
       item.city = data.hotel.state.name
-      item.cancellationPolicies =
-        searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+      item.cancellationPolicies = searchedHotelData.hotels.hotels[i].rooms[0].rates[0]
+        .cancellationPolicies
+        ? searchedHotelData.hotels.hotels[i].rooms[0].rates[0].cancellationPolicies[0]
+        : {
+            amount: '0',
+            from: 'Anytime'
+          }
       item.price = searchedHotelData.hotels.hotels[i].rooms[0].rates[0].net
       item.ratings = searchedHotelData.hotels.hotels[i].reviews[0].rate
       item.reviewsCount = searchedHotelData.hotels.hotels[i].reviews[0].reviewCount
