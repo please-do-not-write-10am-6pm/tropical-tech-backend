@@ -187,8 +187,11 @@ export const getAll = async (req, res) => {
     }
   }
 
-  const start = req.body.currentLocation
-    ? req.body.currentLocation
+  const start = query.geolocation
+    ? {
+        latitude: Number(query.geolocation.latitude),
+        longitude: Number(query.geolocation.longitude)
+      }
     : { latitude: 38.722252, longitude: -9.139337 }
 
   try {
