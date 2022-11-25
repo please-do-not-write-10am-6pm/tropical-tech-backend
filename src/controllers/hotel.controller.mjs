@@ -77,7 +77,7 @@ export const getAll = async (req, res) => {
       const { data } = await axios.get('http://api.positionstack.com/v1/forward', { params })
       geolocation.longitude = data.data[0].longitude
       geolocation.latitude = data.data[0].latitude
-      geolocation.radius = 200
+      geolocation.radius = 20
       geolocation.unit = 'km'
 
       geolocation.longitude && (query.geolocation = geolocation)
@@ -192,6 +192,7 @@ export const getAll = async (req, res) => {
     : { latitude: 38.722252, longitude: -9.139337 }
 
   try {
+    console.log('req.body', req.body, 'query', query)
     const { data } = await axios.post(url, query)
     let searchedHotelData = data
     if (searchedHotelData.hotels.total === 0) {
